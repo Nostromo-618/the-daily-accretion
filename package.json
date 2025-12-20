@@ -1,0 +1,42 @@
+{
+  "name": "the-daily-accretion",
+  "private": true,
+  "type": "module",
+  "version": "0.0.1",
+  "author": "Nostromo-618",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/the-daily-accretion/the-daily-accretion.git"
+  },
+  "homepage": "https://accretion.blog",
+  "scripts": {
+    "build": "nuxt build",
+    "dev": "nuxt dev",
+    "generate": "nuxt generate",
+    "preview": "nuxt preview",
+    "postinstall": "nuxt prepare",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
+    "typecheck": "nuxt typecheck"
+  },
+  "dependencies": {
+    "@iconify-json/lucide": "^1.2.82",
+    "@iconify-json/simple-icons": "^1.2.63",
+    "@nuxt/content": "^3.9.0",
+    "@nuxt/image": "^2.0.0",
+    "@nuxt/ui": "^4.3.0",
+    "@vueuse/nuxt": "^14.1.0",
+    "better-sqlite3": "^12.5.0",
+    "motion-v": "^1.7.4",
+    "nuxt": "^4.2.2",
+    "nuxt-og-image": "^5.1.13"
+  },
+  "devDependencies": {
+    "@nuxt/eslint": "^1.12.1",
+    "eslint": "^9.39.2",
+    "typescript": "^5.9.3",
+    "vue-tsc": "^3.2.0"
+  },
+  "packageManager": "pnpm@10.23.0"
+}
