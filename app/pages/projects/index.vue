@@ -16,6 +16,27 @@ const { data: projects } = await useAsyncData('projects', () => {
 
 const { global } = useAppConfig()
 
+// Helper function to generate project path from filename
+const getProjectPath = (project: any) => {
+  // For 'data' type collections, _id is the full path like 'projects:astronomy-observation-tracker.yml'
+  const id = project._id || ''
+  if (id) {
+    // Handle format like 'projects:filename.yml' or 'projects/filename.yml'
+    const match = id.match(/(?:projects[:/])?([\w-]+)(?:\.ya?ml)?$/)
+    if (match && match[1]) {
+      return `/projects/${match[1]}`
+    }
+  }
+  
+  // Fallback - generate from title (slugified)
+  if (project.title) {
+    const slug = project.title.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '')
+    return `/projects/${slug}`
+  }
+  
+  return '#'
+}
+
 useSeoMeta({
   title: page.value?.seo?.title || page.value?.title,
   ogTitle: page.value?.seo?.title || page.value?.title,
@@ -59,7 +80,7 @@ useSeoMeta({
       }"
     >
       <Motion
-        v-for="(project, index) in projects"
+        v-for="(project, index) in projects || []"
         :key="project.title"
         :initial="{ opacity: 0, transform: 'translateY(10px)' }"
         :while-in-view="{ opacity: 1, transform: 'translateY(0)' }"
@@ -69,7 +90,7 @@ useSeoMeta({
         <UPageCard
           :title="project.title"
           :description="project.description"
-          :to="project.url"
+          :to="getProjectPath(project)"
           orientation="horizontal"
           variant="naked"
           :reverse="index % 2 === 1"
@@ -85,7 +106,7 @@ useSeoMeta({
           </template>
           <template #footer>
             <ULink
-              :to="project.url"
+              :to="getProjectPath(project)"
               class="text-sm text-primary flex items-center"
             >
               View Project

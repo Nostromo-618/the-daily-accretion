@@ -3,6 +3,7 @@ title: "Cosmic Phenomena: The Life Cycle of Stars and Nebulas"
 description: Understanding how stars are born, live, and die, creating the beautiful cosmic structures we observe throughout the universe.
 date: 2024-12-28
 minRead: 6
+image: /placeholder-blog.jpg
 author:
   name: The Daily Accretion
 ---

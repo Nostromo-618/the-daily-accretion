@@ -5,12 +5,22 @@ import { findPageBreadcrumb } from '@nuxt/content/utils'
 
 const route = useRoute()
 
-const { data: page } = await useAsyncData(route.path, () =>
-  queryCollection('blog').path(route.path).first()
+// Construct path from route params to avoid null/undefined issues during SSG
+const slug = Array.isArray(route.params.slug) ? route.params.slug.join('/') : route.params.slug
+
+// Guard against null/undefined slugs during SSG
+if (!slug || slug === 'null' || slug === 'undefined') {
+  throw createError({ statusCode: 404, statusMessage: 'Page not found', fatal: true })
+}
+
+const blogPath = `/blog/${slug}`
+
+const { data: page } = await useAsyncData(`blog-${blogPath}`, () =>
+  queryCollection('blog').path(blogPath).first()
 )
 if (!page.value) throw createError({ statusCode: 404, statusMessage: 'Page not found', fatal: true })
-const { data: surround } = await useAsyncData(`${route.path}-surround`, () =>
-  queryCollectionItemSurroundings('blog', route.path, {
+const { data: surround } = await useAsyncData(`${blogPath}-surround`, () =>
+  queryCollectionItemSurroundings('blog', blogPath, {
     fields: ['description']
   })
 )
@@ -40,7 +50,12 @@ useSeoMeta({
   ogTitle: title
 })
 
-const articleLink = computed(() => `${window?.location}`)
+const articleLink = computed(() => {
+  if (typeof window !== 'undefined') {
+    return window.location.href
+  }
+  return ''
+})
 
 const formatDate = (dateString: string) => {
   return new Date(dateString).toLocaleDateString('en-US', {
