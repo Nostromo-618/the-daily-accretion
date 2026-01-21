@@ -1,6 +1,11 @@
 export default defineAppConfig({
   global: {
-    available: true
+    available: true,
+    picture: {
+      light: '/black-hole.png',
+      dark: '/black-hole.png',
+      alt: 'The Daily Accretion - Black Hole'
+    }
   },
   ui: {
     colors: {
