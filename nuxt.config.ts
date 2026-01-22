@@ -2,6 +2,7 @@
 export default defineNuxtConfig({
   modules: [
     '@nuxt/eslint',
+    '@nuxt/fonts',
     '@nuxt/image',
     '@nuxt/ui',
     '@nuxt/content',
@@ -35,7 +36,12 @@ export default defineNuxtConfig({
       routes: [
         '/'
       ],
-      crawlLinks: true
+      crawlLinks: true,
+      // Ignore admin routes - they are dev-only
+      ignore: [
+        '/admin',
+        '/api/admin'
+      ]
     }
   },
 

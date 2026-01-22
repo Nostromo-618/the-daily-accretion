@@ -7,4 +7,4 @@ hero:
   links: []
 blog:
   title: "Latest Articles"
-  description: "Recent explorations into space science and cosmic phenomena"
+  # description: "Recent explorations into space science and cosmic phenomena"

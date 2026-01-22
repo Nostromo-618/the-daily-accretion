@@ -4,7 +4,7 @@
 @source "../../../content/**/*";
 
 @theme static {
-  --font-sans: 'Public Sans', sans-serif;
+  --font-sans: 'Ubuntu', sans-serif;
   --font-serif: 'Instrument Serif', serif;
 }
 
