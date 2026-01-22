@@ -18,7 +18,7 @@ const props = defineProps<{
 }>()
 
 const emit = defineEmits<{
-  save: [data: { slug: string; frontmatter: ArticleData['frontmatter']; content: string }]
+  save: [data: { slug: string, frontmatter: ArticleData['frontmatter'], content: string }]
   cancel: []
 }>()
 
@@ -26,7 +26,7 @@ const emit = defineEmits<{
 const slug = ref('')
 const title = ref('')
 const description = ref('')
-const date = ref('')
+const date = ref<string>('')
 const minRead = ref(5)
 const image = ref('/placeholder-blog.jpg')
 const authorName = ref('The Daily Accretion')
@@ -38,7 +38,7 @@ watch(() => props.article, (newArticle) => {
     slug.value = newArticle.slug
     title.value = newArticle.frontmatter.title || ''
     description.value = newArticle.frontmatter.description || ''
-    date.value = newArticle.frontmatter.date || new Date().toISOString().split('T')[0]
+    date.value = newArticle.frontmatter.date ?? new Date().toISOString().split('T')[0]!
     minRead.value = newArticle.frontmatter.minRead || 5
     image.value = newArticle.frontmatter.image || '/placeholder-blog.jpg'
     authorName.value = newArticle.frontmatter.author?.name || 'The Daily Accretion'
@@ -52,7 +52,7 @@ watch(() => props.isNew, (isNew) => {
     slug.value = ''
     title.value = ''
     description.value = ''
-    date.value = new Date().toISOString().split('T')[0]
+    date.value = new Date().toISOString().split('T')[0]!
     minRead.value = 5
     image.value = '/placeholder-blog.jpg'
     authorName.value = 'The Daily Accretion'
@@ -126,12 +126,17 @@ const focusEditor = () => {
     <div class="flex-1 overflow-y-auto px-6 py-5">
       <!-- Frontmatter Section -->
       <div class="mb-6 p-5 rounded-lg bg-muted/30 border border-default">
-        <h3 class="text-sm font-semibold mb-5 text-muted">Article Metadata</h3>
-        
+        <h3 class="text-sm font-semibold mb-5 text-muted">
+          Article Metadata
+        </h3>
+
         <!-- Responsive grid: 2 columns on lg+ screens -->
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-x-6 gap-y-4">
           <!-- Title - full width -->
-          <UFormField label="Title" class="lg:col-span-2">
+          <UFormField
+            label="Title"
+            class="lg:col-span-2"
+          >
             <UInput
               v-model="title"
               placeholder="Enter article title..."
@@ -142,7 +147,10 @@ const focusEditor = () => {
           </UFormField>
 
           <!-- Slug - full width -->
-          <UFormField label="Slug (URL path)" class="lg:col-span-2">
+          <UFormField
+            label="Slug (URL path)"
+            class="lg:col-span-2"
+          >
             <UInput
               v-model="slug"
               :disabled="!isNew"
@@ -152,7 +160,10 @@ const focusEditor = () => {
           </UFormField>
 
           <!-- Description - full width -->
-          <UFormField label="Description" class="lg:col-span-2">
+          <UFormField
+            label="Description"
+            class="lg:col-span-2"
+          >
             <UTextarea
               v-model="description"
               placeholder="Brief description of the article..."
@@ -202,8 +213,13 @@ const focusEditor = () => {
 
       <!-- Content Editor -->
       <div class="flex flex-col flex-1">
-        <h3 class="text-sm font-semibold mb-3 text-muted">Content (Markdown)</h3>
-        <div class="editor-wrapper" @click="focusEditor">
+        <h3 class="text-sm font-semibold mb-3 text-muted">
+          Content (Markdown)
+        </h3>
+        <div
+          class="editor-wrapper"
+          @click="focusEditor"
+        >
           <UEditor
             ref="editorRef"
             v-model="content"

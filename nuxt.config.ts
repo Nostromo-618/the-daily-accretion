@@ -15,21 +15,21 @@ export default defineNuxtConfig({
     enabled: true
   },
 
-  devServer: {
-    port: 3011
+  app: {
+    baseURL: '/'
   },
+
+  css: ['~/assets/css/main.css'],
 
   colorMode: {
     preference: 'system'
   },
 
-  css: ['~/assets/css/main.css'],
+  devServer: {
+    port: 3011
+  },
 
   compatibilityDate: '2024-11-01',
-
-  app: {
-    baseURL: '/'
-  },
 
   nitro: {
     prerender: {

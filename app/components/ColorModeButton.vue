@@ -19,7 +19,7 @@ const nextTheme = computed(() => {
 })
 
 const switchTheme = () => {
-  colorMode.preference = nextTheme.value
+  colorMode.preference = nextTheme.value as 'system' | 'light' | 'dark'
 }
 
 const startViewTransition = (event: MouseEvent) => {

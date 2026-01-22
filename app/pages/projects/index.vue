@@ -27,13 +27,13 @@ const getProjectPath = (project: any) => {
       return `/projects/${match[1]}`
     }
   }
-  
+
   // Fallback - generate from title (slugified)
   if (project.title) {
     const slug = project.title.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '')
     return `/projects/${slug}`
   }
-  
+
   return '#'
 }
 

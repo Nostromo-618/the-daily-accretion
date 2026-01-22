@@ -5,7 +5,7 @@ interface Article {
   modifiedAt: string
 }
 
-const props = defineProps<{
+const _props = defineProps<{
   articles: Article[]
   selectedSlug: string | null
 }>()
@@ -94,7 +94,10 @@ const handleDelete = () => {
         <UCard>
           <template #header>
             <div class="flex items-center gap-2">
-              <UIcon name="i-lucide-alert-triangle" class="text-error" />
+              <UIcon
+                name="i-lucide-alert-triangle"
+                class="text-error"
+              />
               <span class="font-semibold">Delete Article</span>
             </div>
           </template>

@@ -13,7 +13,7 @@ if (!slug || slug === 'null' || slug === 'undefined') {
 const { data: page } = await useAsyncData(`project-${slug}`, async () => {
   const projects = await queryCollection('projects').all()
   if (!projects) return null
-  
+
   // Find project by matching slug to filename
   const project = projects.find((p: any) => {
     // For 'data' type collections, _id is the full path like 'projects:astronomy-observation-tracker.yml'
@@ -25,16 +25,16 @@ const { data: page } = await useAsyncData(`project-${slug}`, async () => {
         return match[1] === slug
       }
     }
-    
+
     // Fallback - compare slugified title
     if (p.title) {
       const titleSlug = p.title.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '')
       return titleSlug === slug
     }
-    
+
     return false
   })
-  
+
   return project || null
 })
 
@@ -76,7 +76,7 @@ const formatDate = (date: Date | string) => {
   })
 }
 
-const formatYear = (date: Date | string) => {
+const _formatYear = (date: Date | string) => {
   const dateObj = typeof date === 'string' ? new Date(date) : date
   return dateObj.getFullYear()
 }
@@ -139,4 +139,3 @@ const formatYear = (date: Date | string) => {
     </UContainer>
   </UMain>
 </template>
-

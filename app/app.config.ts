@@ -1,6 +1,8 @@
 export default defineAppConfig({
   global: {
     available: true,
+    meetingLink: 'https://cal.com',
+    email: 'hello@example.com',
     picture: {
       light: '/planet.svg',
       dark: '/planet.svg',
