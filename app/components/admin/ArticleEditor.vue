@@ -88,6 +88,14 @@ const handleSave = () => {
 const isSaveDisabled = computed(() => {
   return !slug.value || !title.value || !content.value
 })
+
+// Editor ref for programmatic focus
+const editorRef = ref<{ editor: { commands: { focus: () => void } } } | null>(null)
+
+// Focus editor when clicking anywhere in the wrapper
+const focusEditor = () => {
+  editorRef.value?.editor?.commands?.focus()
+}
 </script>
 
 <template>
@@ -195,15 +203,54 @@ const isSaveDisabled = computed(() => {
       <!-- Content Editor -->
       <div class="flex flex-col flex-1">
         <h3 class="text-sm font-semibold mb-3 text-muted">Content (Markdown)</h3>
-        <UEditor
-          v-model="content"
-          content-type="markdown"
-          class="min-h-[500px] border border-default rounded-lg flex-1"
-          :ui="{
-            base: 'prose prose-invert max-w-none w-full'
-          }"
-        />
+        <div class="editor-wrapper" @click="focusEditor">
+          <UEditor
+            ref="editorRef"
+            v-model="content"
+            content-type="markdown"
+            placeholder="Start writing your article..."
+            class="editor-full-height"
+          />
+        </div>
       </div>
     </div>
   </div>
 </template>
+
+<style scoped>
+.editor-wrapper {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-height: 500px;
+  border: 1px solid var(--ui-border);
+  border-radius: 0.5rem;
+  overflow: hidden;
+}
+
+.editor-full-height {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  height: 100%;
+}
+
+/* Force the TipTap/ProseMirror editor to fill the container */
+.editor-full-height :deep(.tiptap) {
+  flex: 1;
+  min-height: 100%;
+  padding: 1rem;
+}
+
+.editor-full-height :deep(.ProseMirror) {
+  min-height: 100%;
+  height: 100%;
+  outline: none;
+}
+
+/* Prose styling for the content */
+.editor-full-height :deep(.prose) {
+  max-width: none;
+  width: 100%;
+}
+</style>
