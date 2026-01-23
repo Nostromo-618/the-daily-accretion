@@ -50,11 +50,10 @@ useSeoMeta({
   ogTitle: title
 })
 
-const articleLink = computed(() => {
-  if (typeof window !== 'undefined') {
-    return window.location.href
-  }
-  return ''
+const articleLink = ref('')
+
+onMounted(() => {
+  articleLink.value = window.location.href
 })
 
 const formatDate = (dateString: string) => {
