@@ -1,4 +1,7 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
+import { readdirSync } from 'node:fs'
+import { join } from 'node:path'
+
 export default defineNuxtConfig({
   modules: [
     '@nuxt/eslint',
@@ -34,7 +37,10 @@ export default defineNuxtConfig({
   nitro: {
     prerender: {
       routes: [
-        '/'
+        '/',
+        ...readdirSync(join(process.cwd(), 'content/blog'))
+          .filter(file => file.endsWith('.md'))
+          .map(file => `/blog/${file.replace('.md', '')}`)
       ],
       crawlLinks: true,
       // Ignore admin routes - they are dev-only
