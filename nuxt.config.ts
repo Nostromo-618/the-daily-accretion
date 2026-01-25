@@ -38,6 +38,7 @@ export default defineNuxtConfig({
     prerender: {
       routes: [
         '/',
+        '/404.html',
         ...readdirSync(join(process.cwd(), 'content/blog'))
           .filter(file => file.endsWith('.md'))
           .map(file => `/blog/${file.replace('.md', '')}`)
