@@ -26,6 +26,7 @@ export default defineEventHandler(async (event) => {
       date: string
       minRead?: number
       image?: string
+      imagePosition?: 'top' | 'center' | 'bottom'
       author?: { name: string }
     }
     content: string
@@ -52,6 +53,10 @@ export default defineEventHandler(async (event) => {
 
   if (body.frontmatter.image) {
     frontmatterLines.push(`image: ${body.frontmatter.image}`)
+  }
+
+  if (body.frontmatter.imagePosition && body.frontmatter.imagePosition !== 'center') {
+    frontmatterLines.push(`imagePosition: ${body.frontmatter.imagePosition}`)
   }
 
   if (body.frontmatter.author?.name) {

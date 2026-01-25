@@ -61,6 +61,7 @@ export default defineContentConfig({
         minRead: z.number(),
         date: z.date(),
         image: z.string().nonempty().editor({ input: 'media' }),
+        imagePosition: z.enum(['top', 'center', 'bottom']).optional().default('center'),
         author: createAuthorSchema()
       })
     }),

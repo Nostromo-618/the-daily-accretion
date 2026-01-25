@@ -62,7 +62,7 @@ useSeoMeta({
             :ui="{
               root: 'md:grid md:grid-cols-2 group overflow-visible transition-all duration-300',
               image:
-                'group-hover/blog-post:scale-105 rounded-lg shadow-lg border-4 border-muted ring-2 ring-default',
+                `group-hover/blog-post:scale-105 rounded-lg shadow-lg border-4 border-muted ring-2 ring-default object-${post.imagePosition || 'center'}`,
               header:
                 index % 2 === 0
                   ? 'sm:-rotate-1 overflow-visible'

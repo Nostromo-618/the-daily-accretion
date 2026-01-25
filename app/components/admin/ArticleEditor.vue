@@ -7,6 +7,7 @@ interface ArticleData {
     date?: string
     minRead?: number
     image?: string
+    imagePosition?: 'top' | 'center' | 'bottom'
     author?: { name?: string }
   }
   body: string
@@ -29,6 +30,7 @@ const description = ref('')
 const date = ref<string>('')
 const minRead = ref(5)
 const image = ref('/placeholder-blog.jpg')
+const imagePosition = ref<'top' | 'center' | 'bottom'>('center')
 const authorName = ref('The Daily Accretion')
 const content = ref('')
 
@@ -41,6 +43,7 @@ watch(() => props.article, (newArticle) => {
     date.value = newArticle.frontmatter.date ?? new Date().toISOString().split('T')[0]!
     minRead.value = newArticle.frontmatter.minRead || 5
     image.value = newArticle.frontmatter.image || '/placeholder-blog.jpg'
+    imagePosition.value = newArticle.frontmatter.imagePosition || 'center'
     authorName.value = newArticle.frontmatter.author?.name || 'The Daily Accretion'
     content.value = newArticle.body
   }
@@ -55,6 +58,7 @@ watch(() => props.isNew, (isNew) => {
     date.value = new Date().toISOString().split('T')[0]!
     minRead.value = 5
     image.value = '/placeholder-blog.jpg'
+    imagePosition.value = 'center'
     authorName.value = 'The Daily Accretion'
     content.value = ''
   }
@@ -79,6 +83,7 @@ const handleSave = () => {
       date: date.value,
       minRead: minRead.value,
       image: image.value,
+      imagePosition: imagePosition.value,
       author: { name: authorName.value }
     },
     content: content.value
@@ -198,6 +203,23 @@ const focusEditor = () => {
               placeholder="/placeholder-blog.jpg"
               class="w-full"
             />
+          </UFormField>
+
+          <!-- Image Position Selector -->
+          <UFormField label="Image Focus Position">
+            <div class="flex gap-2">
+              <UButton
+                v-for="pos in (['top', 'center', 'bottom'] as const)"
+                :key="pos"
+                :label="pos.charAt(0).toUpperCase() + pos.slice(1)"
+                :variant="imagePosition === pos ? 'solid' : 'outline'"
+                size="sm"
+                @click="imagePosition = pos"
+              />
+            </div>
+            <p class="text-xs text-muted mt-1">
+              Choose which part of the image to show when cropped
+            </p>
           </UFormField>
 
           <!-- Author Name -->
