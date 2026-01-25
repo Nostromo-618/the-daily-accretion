@@ -15,7 +15,7 @@ if (!slug || slug === 'null' || slug === 'undefined') {
 
 const blogPath = `/blog/${slug}`
 
-const { data: page, status } = await useAsyncData(`blog-${blogPath}`, () =>
+const { data: page } = await useAsyncData(`blog-${blogPath}`, () =>
   queryCollection('blog').path(blogPath).first()
 )
 
