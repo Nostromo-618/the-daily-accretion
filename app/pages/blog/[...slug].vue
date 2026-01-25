@@ -15,10 +15,14 @@ if (!slug || slug === 'null' || slug === 'undefined') {
 
 const blogPath = `/blog/${slug}`
 
-const { data: page } = await useAsyncData(`blog-${blogPath}`, () =>
+const { data: page, status } = await useAsyncData(`blog-${blogPath}`, () =>
   queryCollection('blog').path(blogPath).first()
 )
-if (!page.value) throw createError({ statusCode: 404, statusMessage: 'Page not found', fatal: true })
+
+// Only throw 404 on server or after data has loaded - not during client hydration
+if (import.meta.server && !page.value) {
+  throw createError({ statusCode: 404, statusMessage: 'Page not found', fatal: true })
+}
 const { data: surround } = await useAsyncData(`${blogPath}-surround`, () =>
   queryCollectionItemSurroundings('blog', blogPath, {
     fields: ['description']
@@ -30,9 +34,9 @@ const blogNavigation = computed(() => navigation.value.find(item => item.path ==
 
 const breadcrumb = computed(() => mapContentNavigation(findPageBreadcrumb(blogNavigation?.value, page.value?.path)).map(({ icon, ...link }) => link))
 
-if (page.value.image) {
+if (page.value?.image) {
   defineOgImage({ url: page.value.image })
-} else {
+} else if (page.value) {
   defineOgImageComponent('Blog', {
     headline: breadcrumb.value.map(item => item.label).join(' > ')
   }, {
