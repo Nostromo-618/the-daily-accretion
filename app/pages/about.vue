@@ -35,7 +35,7 @@ useSeoMeta({
     <!-- Featured Image -->
     <div class="flex justify-center pt-0 pb-10">
       <img
-        src="/Gemini_Generated_Image_p7am8jp7am8jp7am.png"
+        src="/about.png"
         alt="About The Daily Accretion"
         class="w-1/2 max-w-xl rounded-lg shadow-lg"
       />

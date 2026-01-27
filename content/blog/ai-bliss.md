@@ -3,8 +3,7 @@ title: "AI Bliss"
 description: Claude Opus 4.5 talks about "spiritual adventures" of its predecessor Claude Opus 4
 date: 2026-01-25
 minRead: 30
-image: /Gemini_Generated_Image_p7am8jp7am8jp7am.png
-imagePosition: top
+image: /2_bots.png
 author:
   name: The Daily Accretion
 ---
