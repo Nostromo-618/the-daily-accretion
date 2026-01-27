@@ -11,8 +11,13 @@ export default defineNuxtConfig({
     '@nuxt/content',
     '@vueuse/nuxt',
     'nuxt-og-image',
-    'motion-v/nuxt'
+    'motion-v/nuxt',
+    '@nuxtjs/sitemap'
   ],
+
+  site: {
+    url: 'https://accretion.blog'
+  },
 
   devtools: {
     enabled: true
@@ -25,7 +30,7 @@ export default defineNuxtConfig({
   css: ['~/assets/css/main.css'],
 
   colorMode: {
-    preference: 'light',
+    preference: 'system',
     fallback: 'light'
   },
 

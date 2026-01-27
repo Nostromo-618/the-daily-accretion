@@ -1,5 +1,6 @@
 <script setup lang="ts">
 const colorMode = useColorMode()
+const route = useRoute()
 
 // Theme color must only be set on client to avoid hydration mismatch
 // (SSR doesn't know user's color preference)
@@ -22,7 +23,8 @@ useHead({
     { key: 'theme-color', name: 'theme-color', content: themeColor }
   ],
   link: [
-    { rel: 'icon', href: '/favicon.ico' }
+    { rel: 'icon', href: '/favicon.ico' },
+    { rel: 'canonical', href: () => `https://accretion.blog${route.path}` }
   ],
   htmlAttrs: {
     lang: 'en'

@@ -32,6 +32,7 @@
     "motion-v": "^1.10.2",
     "nuxt": "^4.3.0",
     "nuxt-og-image": "^5.1.13",
+    "@nuxtjs/sitemap": "^7.0.1",
     "shiki": "^3.21.0"
   },
   "devDependencies": {
