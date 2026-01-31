@@ -29,9 +29,10 @@ Then open http://localhost:3000
 │   ├── feed-your-head.html
 │   └── year-2025-is-over-finally.html
 ├── projects/           # Projects showcase
-├── css/                # Vanduo CSS framework
-├── js/                 # Vanduo JS components
+├── vanduo.min.css      # Vanduo CSS (minified)
+├── vanduo.min.js       # Vanduo JS (minified)
 ├── fonts/              # Web fonts
+├── icons/              # Phosphor icons
 ├── images/             # Blog images
 ├── vercel.json         # Vercel deployment config
 ├── sitemap.xml         # SEO sitemap

@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,10 +9,8 @@
     <meta name="keywords" content="blog, AI, consciousness, space, science, philosophy, technology">
     <meta name="robots" content="index, follow">
     <title>The Daily Accretion</title>
-
     <!-- Canonical URL -->
     <link rel="canonical" href="https://accretion.blog/">
-
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://accretion.blog/">
@@ -22,23 +19,19 @@
     <meta property="og:image" content="https://accretion.blog/images/planet.svg">
     <meta property="og:locale" content="en_US">
     <meta property="og:site_name" content="The Daily Accretion">
-
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:url" content="https://accretion.blog/">
     <meta name="twitter:title" content="The Daily Accretion">
     <meta name="twitter:description" content="Exploring the mind, universe, and everything in between.">
     <meta name="twitter:image" content="https://accretion.blog/images/planet.svg">
-
     <!-- Favicon -->
     <link rel="icon" type="image/svg+xml" href="./favicon.svg">
-
     <!-- Vanduo Framework CSS -->
-    <link rel="stylesheet" href="./css/vanduo.css">
-
+    <link rel="stylesheet" href="./vanduo.min.css">
     <!-- Phosphor Icons -->
-    <link rel="stylesheet" href="./css/icons/icons.css">
-
+    <link rel="stylesheet" href="./icons/phosphor/regular/style.css">
+    <link rel="stylesheet" href="./icons/phosphor/fill/style.css">
     <!-- JSON-LD Structured Data -->
     <script type="application/ld+json">
     {
@@ -53,16 +46,13 @@
       }
     }
     </script>
-
     <style>
         html {
             scroll-behavior: smooth;
         }
-
         .navbar-brand {
             margin-left: 1rem;
         }
-
         .skip-link {
             position: absolute;
             top: -40px;
@@ -73,20 +63,16 @@
             text-decoration: none;
             z-index: 100;
         }
-
         .skip-link:focus {
             top: 0;
         }
-
         section {
             padding: 4rem 0;
             scroll-margin-top: 80px;
         }
-
         section:first-of-type {
             padding-top: 2rem;
         }
-
         section.hero {
             display: flex;
             flex-direction: column;
@@ -98,7 +84,6 @@
             padding-top: 180px;
             padding-bottom: 60px;
         }
-
         .hero-content {
             position: relative;
             z-index: 2;
@@ -106,7 +91,6 @@
             padding: 2rem;
             margin: 0 auto;
         }
-
         .hero-image {
             width: 128px;
             height: 128px;
@@ -116,23 +100,19 @@
             padding: 0.5rem;
             background: var(--bg-primary);
         }
-
         .blog-card {
             transition: transform 0.2s ease, box-shadow 0.2s ease;
         }
-
         .blog-card:hover {
             transform: translateY(-4px);
             box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
         }
-
         .blog-card img {
             width: 100%;
             height: 200px;
             object-fit: cover;
             border-radius: var(--btn-border-radius) var(--btn-border-radius) 0 0;
         }
-
         .blog-meta {
             display: flex;
             gap: 1rem;
@@ -140,7 +120,6 @@
             color: var(--text-muted);
             margin-bottom: 0.5rem;
         }
-
         .read-more {
             display: inline-flex;
             align-items: center;
@@ -149,25 +128,20 @@
             text-decoration: none;
             font-weight: 500;
         }
-
         .read-more:hover {
             text-decoration: underline;
         }
-
         .read-more i {
             transition: transform 0.2s ease;
         }
-
         .read-more:hover i {
             transform: translateX(4px);
         }
     </style>
 </head>
-
 <body>
     <!-- Skip to content link -->
     <a href="#main-content" class="skip-link">Skip to main content</a>
-
     <!-- Navbar -->
     <nav class="navbar navbar-fixed">
         <div class="navbar-container">
@@ -183,9 +157,8 @@
                     <li><a href="index.html" class="nav-link active">Home</a></li>
                     <li><a href="blog/" class="nav-link">Blog</a></li>
                     <li><a href="about.html" class="nav-link">About</a></li>
-                    <li><a href="projects/" class="nav-link">Projects</a></li>
+                    <!-- <li><a href="projects/" class="nav-link">Projects</a></li> -->
                 </ul>
-
                 <!-- Theme Customizer Trigger -->
                 <button class="theme-customizer-trigger" data-theme-customizer-trigger
                     aria-label="Open theme customizer" style="margin-left: auto;">
@@ -194,7 +167,6 @@
             </div>
         </div>
     </nav>
-
     <!-- Hero Section -->
     <section id="hero" class="hero parallax">
         <div class="parallax-layer" data-speed="0.5"></div>
@@ -204,16 +176,13 @@
             <p class="text-lg text-muted">Exploring the mind, universe, and everything in between</p>
         </div>
     </section>
-
     <!-- Main Content -->
     <main id="main-content">
         <div class="container">
-
             <!-- Latest Articles -->
             <section id="latest-articles">
                 <h2 class="mb-8">Latest Articles</h2>
                 <div class="row">
-
                     <!-- Article: Feed Your Head -->
                     <div class="col-12 col-md-6 col-lg-4 mb-6">
                         <a href="blog/feed-your-head.html" class="card blog-card"
@@ -230,7 +199,6 @@
                             </div>
                         </a>
                     </div>
-
                     <!-- Article: AI Bliss -->
                     <div class="col-12 col-md-6 col-lg-4 mb-6">
                         <a href="blog/ai-bliss.html" class="card blog-card"
@@ -248,7 +216,6 @@
                             </div>
                         </a>
                     </div>
-
                     <!-- Article: Year 2025 is over -->
                     <div class="col-12 col-md-6 col-lg-4 mb-6">
                         <a href="blog/year-2025-is-over-finally.html" class="card blog-card"
@@ -267,16 +234,13 @@
                             </div>
                         </a>
                     </div>
-
                 </div>
                 <div class="text-center mt-6">
                     <a href="blog/" class="btn btn-outline">View All Articles &rarr;</a>
                 </div>
             </section>
-
         </div>
     </main>
-
     <!-- Footer -->
     <footer class="footer">
         <div class="footer-container">
@@ -294,7 +258,7 @@
                             <li><a href="index.html">Home</a></li>
                             <li><a href="blog/">Blog</a></li>
                             <li><a href="about.html">About</a></li>
-                            <li><a href="projects/">Projects</a></li>
+                            <!-- <li><a href="projects/">Projects</a></li> -->
                         </ul>
                     </div>
                 </div>
@@ -312,15 +276,7 @@
             </div>
         </div>
     </footer>
-
     <!-- Scripts -->
-    <script src="./js/utils/helpers.js"></script>
-    <script src="./js/vanduo.js"></script>
-    <script src="./js/components/theme-switcher.js"></script>
-    <script src="./js/components/font-switcher.js"></script>
-    <script src="./js/components/theme-customizer.js"></script>
-    <script src="./js/components/navbar.js"></script>
-    <script src="./js/components/parallax.js"></script>
+    <script src="./vanduo.min.js"></script>
 </body>
-
 </html>
