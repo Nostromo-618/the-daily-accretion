@@ -17,6 +17,12 @@
     <meta property="og:image" content="https://img.youtube.com/vi/sp3B97N67Cw/hqdefault.jpg">
     <meta property="article:published_time" content="2026-01-31">
     <link rel="icon" type="image/svg+xml" href="../images/planet.svg">
+    <!-- Theme Defaults (before framework loads) -->
+    <script>
+        if (!localStorage.getItem('vanduo-neutral-color')) localStorage.setItem('vanduo-neutral-color', 'zinc');
+        if (!localStorage.getItem('vanduo-primary-color')) localStorage.setItem('vanduo-primary-color', 'teal');
+        if (!localStorage.getItem('vanduo-radius')) localStorage.setItem('vanduo-radius', '0.25');
+    </script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Nostromo-618/vanduo-framework@main/dist/vanduo.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.1/src/regular/style.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.1/src/fill/style.css">
@@ -71,24 +77,6 @@
         .back-link:hover {
             color: var(--color-primary);
         }
-
-        .video-wrapper {
-            position: relative;
-            width: 100%;
-            padding-bottom: 56.25%;
-            margin: 2rem 0;
-            border-radius: var(--btn-border-radius);
-            overflow: hidden;
-        }
-
-        .video-wrapper iframe {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            border: none;
-        }
     </style>
 </head>
 
@@ -136,12 +124,14 @@
                 <p>Hania Rani was born in Poland and now divides her time between Warsaw and Berlin. Between these two
                     cities, the pianist composes subtle and sensitive music reminiscent of Philip Glass or Erik Satie.
                 </p>
-                <div class="video-wrapper">
-                    <iframe src="https://www.youtube.com/embed/sp3B97N67Cw?si=pSiQMznJGN7n4Yq2"
-                        title="YouTube video player" frameborder="0"
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                        referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-                </div>
+                <a href="https://www.youtube.com/watch?v=sp3B97N67Cw" target="_blank" class="video-link"
+                    aria-label="Watch on YouTube">
+                    <img src="https://img.youtube.com/vi/sp3B97N67Cw/maxresdefault.jpg"
+                        alt="Hania Rani Tiny Desk Concert">
+                    <div class="video-play-overlay">
+                        <i class="ph-fill ph-play-circle video-play-icon"></i>
+                    </div>
+                </a>
             </div>
         </article>
     </main>

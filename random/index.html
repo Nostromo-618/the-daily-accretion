@@ -16,6 +16,12 @@
     <meta property="og:description"
         content="Short random thoughts, asides, and musings that don't fit the main blog—quick sparks and reflections.">
     <link rel="icon" type="image/svg+xml" href="../images/planet.svg">
+    <!-- Theme Defaults (before framework loads) -->
+    <script>
+        if (!localStorage.getItem('vanduo-neutral-color')) localStorage.setItem('vanduo-neutral-color', 'zinc');
+        if (!localStorage.getItem('vanduo-primary-color')) localStorage.setItem('vanduo-primary-color', 'teal');
+        if (!localStorage.getItem('vanduo-radius')) localStorage.setItem('vanduo-radius', '0.25');
+    </script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Nostromo-618/vanduo-framework@main/dist/vanduo.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.1/src/regular/style.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.1/src/fill/style.css">
