@@ -1,6 +1,23 @@
 {
     "cleanUrls": true,
     "trailingSlash": false,
+    "redirects": [
+        {
+            "source": "/ai-bliss",
+            "destination": "/blog/ai-bliss",
+            "permanent": true
+        },
+        {
+            "source": "/feed-your-head",
+            "destination": "/blog/feed-your-head",
+            "permanent": true
+        },
+        {
+            "source": "/year-2025-is-over-finally",
+            "destination": "/blog/year-2025-is-over-finally",
+            "permanent": true
+        }
+    ],
     "rewrites": [
         {
             "source": "/blog",
