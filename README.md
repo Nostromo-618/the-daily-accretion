@@ -1,9 +1,59 @@
 # The Daily Accretion
 
-Just a blog powered by [Nuxt UI](https://ui.nuxt.com) and [Nuxt Content](https://content.nuxt.com).
+> Exploring the mind, universe, and everything in between
 
-## DISCLAIMER
+A personal blog built with [Vanduo Framework](https://vanduo.dev) — pure HTML, CSS, and JavaScript with zero dependencies.
 
-This is a personal blog project. I am just a hobbyist who is curious about many topics and phenomena in the universe.
+## Live Site
 
-I have to keep it as public project otherwise Github Pages hosting will not work with free tier. So please ignore this repository if you are not interested in this project.
+**https://accretion.blog**
+
+## Local Development
+
+Serve the site locally:
+
+```bash
+npx serve .
+```
+
+Then open http://localhost:3000
+
+## Project Structure
+
+```
+├── index.html          # Homepage
+├── about.html          # About page
+├── blog/               # Blog articles
+│   ├── index.html
+│   ├── ai-bliss.html
+│   ├── feed-your-head.html
+│   └── year-2025-is-over-finally.html
+├── projects/           # Projects showcase
+├── css/                # Vanduo CSS framework
+├── js/                 # Vanduo JS components
+├── fonts/              # Web fonts
+├── images/             # Blog images
+├── vercel.json         # Vercel deployment config
+├── sitemap.xml         # SEO sitemap
+└── robots.txt          # Crawler directives
+```
+
+## Adding New Blog Posts
+
+1. Copy an existing blog post HTML file in `/blog/`
+2. Update the meta tags, title, and content
+3. Add the article to `blog/index.html` and `index.html`
+4. Update `sitemap.xml`
+
+## Deployment
+
+This site is deployed to Vercel. Push to `main` branch to deploy automatically.
+
+## Built With
+
+- [Vanduo Framework](https://vanduo.dev) - Pure HTML/CSS/JS framework
+- [Phosphor Icons](https://phosphoricons.com) - Icon library
+
+## License
+
+Content © 2025-2026 The Daily Accretion

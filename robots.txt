@@ -1,0 +1,6 @@
+# The Daily Accretion
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://accretion.blog/sitemap.xml

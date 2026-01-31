@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Space science projects - Tools and applications exploring the cosmos, from data visualization platforms to astronomy observation trackers.">
+    <meta name="author" content="The Daily Accretion">
+    <meta name="robots" content="index, follow">
+    <title>Projects | The Daily Accretion</title>
+
+    <link rel="canonical" href="https://accretion.blog/projects/">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://accretion.blog/projects/">
+    <meta property="og:title" content="Projects | The Daily Accretion">
+    <meta property="og:description" content="Space science projects exploring the cosmos.">
+
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+    <link rel="stylesheet" href="../css/vanduo.css">
+    <link rel="stylesheet" href="../css/icons/icons.css">
+
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+
+        .navbar-brand {
+            margin-left: 1rem;
+        }
+
+        section {
+            padding: 4rem 0;
+            scroll-margin-top: 80px;
+        }
+
+        .page-header {
+            padding-top: 120px;
+            padding-bottom: 2rem;
+            text-align: center;
+        }
+
+        .project-card {
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .project-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+        }
+
+        .project-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: var(--btn-border-radius) var(--btn-border-radius) 0 0;
+        }
+
+        .project-tags {
+            display: flex;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+            margin-top: 1rem;
+        }
+
+        .project-tag {
+            background: var(--bg-secondary);
+            color: var(--text-muted);
+            padding: 0.25rem 0.75rem;
+            border-radius: 9999px;
+            font-size: var(--font-size-sm);
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-fixed">
+        <div class="navbar-container">
+            <div class="navbar-brand">
+                <a href="../index.html"><i class="ph-fill ph-planet"
+                        style="color: var(--color-primary); margin-right: 0.25em;"></i>The Daily Accretion</a>
+            </div>
+            <button class="navbar-toggle" aria-label="Toggle navigation">
+                <span></span><span></span><span></span>
+            </button>
+            <div class="navbar-menu">
+                <ul class="navbar-nav">
+                    <li><a href="../index.html" class="nav-link">Home</a></li>
+                    <li><a href="../blog/" class="nav-link">Blog</a></li>
+                    <li><a href="../about.html" class="nav-link">About</a></li>
+                    <li><a href="./" class="nav-link active">Projects</a></li>
+                </ul>
+                <button class="theme-customizer-trigger" data-theme-customizer-trigger
+                    aria-label="Open theme customizer" style="margin-left: auto;">
+                    <i class="ph ph-paint-roller"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <div class="page-header">
+        <div class="container">
+            <h1>Space Science Projects</h1>
+            <p class="text-muted text-lg">Tools and applications exploring the cosmos, from data visualization platforms
+                to astronomy observation trackers and NASA API integrations</p>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <main id="main-content">
+        <div class="container">
+            <div class="row">
+
+                <!-- Project: Astronomy Observation Tracker -->
+                <div class="col-12 col-md-6 col-lg-4 mb-6">
+                    <div class="card project-card">
+                        <img src="../images/placeholder-project.jpg" alt="Astronomy Observation Tracker">
+                        <div class="card-body">
+                            <h3 style="margin-bottom: 0.5rem;">Astronomy Observation Tracker</h3>
+                            <p class="text-muted" style="margin-bottom: 0.5rem;">A mobile and web application that helps
+                                amateur astronomers plan observation sessions, track celestial events, and log their
+                                discoveries. Features real-time sky maps, weather integration, and community sharing of
+                                observations.</p>
+                            <div class="project-tags">
+                                <span class="project-tag">Mobile App</span>
+                                <span class="project-tag">Astronomy</span>
+                                <span class="project-tag">Community</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="row">
+                <div class="col-12 col-md-4">
+                    <div class="footer-section">
+                        <h4>The Daily Accretion</h4>
+                        <p>Exploring the mind, universe, and everything in between.</p>
+                    </div>
+                </div>
+                <div class="col-12 col-md-4">
+                    <div class="footer-section">
+                        <h4>Navigation</h4>
+                        <ul class="footer-links">
+                            <li><a href="../index.html">Home</a></li>
+                            <li><a href="../blog/">Blog</a></li>
+                            <li><a href="../about.html">About</a></li>
+                            <li><a href="./">Projects</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-12 col-md-4">
+                    <div class="footer-section">
+                        <h4>Built With</h4>
+                        <ul class="footer-links">
+                            <li><a href="https://vanduo.dev" target="_blank">Vanduo Framework</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p class="text-center text-muted">&copy; 2025-2026 The Daily Accretion.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/utils/helpers.js"></script>
+    <script src="../js/vanduo.js"></script>
+    <script src="../js/components/theme-switcher.js"></script>
+    <script src="../js/components/font-switcher.js"></script>
+    <script src="../js/components/theme-customizer.js"></script>
+    <script src="../js/components/navbar.js"></script>
+</body>
+
+</html>
