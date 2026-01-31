@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,41 +13,52 @@
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://accretion.blog/random/">
     <meta property="og:title" content="Random | The Daily Accretion">
-    <meta property="og:description" content="Short random thoughts, asides, and musings that don't fit the main blog—quick sparks and reflections.">
+    <meta property="og:description"
+        content="Short random thoughts, asides, and musings that don't fit the main blog—quick sparks and reflections.">
     <link rel="icon" type="image/svg+xml" href="../images/planet.svg">
-    <link rel="stylesheet" href="../vanduo.min.css">
-    <link rel="stylesheet" href="../icons/phosphor/regular/style.css">
-    <link rel="stylesheet" href="../icons/phosphor/fill/style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Nostromo-618/vanduo-framework@main/dist/vanduo.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.1/src/regular/style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.1/src/fill/style.css">
     <link rel="stylesheet" href="../custom.css">
     <style>
         html {
             scroll-behavior: smooth;
         }
+
         .navbar-brand {
             margin-left: 1rem;
         }
+
         section {
             padding: 4rem 0;
             scroll-margin-top: 80px;
         }
+
         .page-header {
             padding-top: 120px;
             padding-bottom: 2rem;
             text-align: center;
         }
+
         .blog-card {
+            height: 100%;
+            display: flex;
+            flex-direction: column;
             transition: transform 0.2s ease, box-shadow 0.2s ease;
         }
+
         .blog-card:hover {
             transform: translateY(-4px);
             box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
         }
+
         .blog-card img {
             width: 100%;
             height: 200px;
             object-fit: cover;
             border-radius: var(--btn-border-radius) var(--btn-border-radius) 0 0;
         }
+
         .blog-meta {
             display: flex;
             gap: 1rem;
@@ -54,6 +66,7 @@
             color: var(--text-muted);
             margin-bottom: 0.5rem;
         }
+
         .read-more {
             display: inline-flex;
             align-items: center;
@@ -62,17 +75,37 @@
             text-decoration: none;
             font-weight: 500;
         }
+
         .read-more:hover {
             text-decoration: underline;
         }
+
         .read-more i {
             transition: transform 0.2s ease;
         }
+
         .read-more:hover i {
             transform: translateX(4px);
         }
+
+        /* Uniform card height */
+        #main-content .row>[class*="col-"] {
+            display: flex;
+        }
+
+        .blog-card .card-body {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .blog-card .card-body p.text-muted {
+            flex: 1;
+            margin-bottom: 1rem;
+        }
     </style>
 </head>
+
 <body>
     <!-- Navbar -->
     <nav class="navbar navbar-fixed">
@@ -110,9 +143,28 @@
     <main id="main-content">
         <div class="container">
             <div class="row">
+                <!-- Article: Hania Rani concert (latest) -->
+                <div class="col-12 col-md-6 col-lg-4 mb-6">
+                    <a href="../blog/hania-rani-concert.html" class="card blog-card"
+                        style="text-decoration: none; display: block;">
+                        <img src="https://img.youtube.com/vi/sp3B97N67Cw/hqdefault.jpg"
+                            alt="Hania Rani — Piano & Electronic Concert">
+                        <div class="card-body">
+                            <div class="blog-meta">
+                                <span><i class="ph ph-calendar"></i> Jan 31, 2026</span>
+                                <span><i class="ph ph-clock"></i> 2 min read</span>
+                            </div>
+                            <h3 style="margin-bottom: 0.5rem;">Hania Rani — Piano & Electronic Concert</h3>
+                            <p class="text-muted" style="margin-bottom: 1rem;">Subtle, sensitive piano and electronic
+                                music from Warsaw and Berlin.</p>
+                            <span class="read-more">Read Article <i class="ph ph-arrow-right"></i></span>
+                        </div>
+                    </a>
+                </div>
                 <!-- Article: Feed Your Head -->
                 <div class="col-12 col-md-6 col-lg-4 mb-6">
-                    <a href="../blog/feed-your-head.html" class="card blog-card" style="text-decoration: none; display: block;">
+                    <a href="../blog/feed-your-head.html" class="card blog-card"
+                        style="text-decoration: none; display: block;">
                         <img src="../images/alice-and-the-mushroom.png" alt="Feed Your Head">
                         <div class="card-body">
                             <div class="blog-meta">
@@ -181,6 +233,7 @@
             </div>
         </div>
     </footer>
-    <script src="../vanduo.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/Nostromo-618/vanduo-framework@main/dist/vanduo.min.js"></script>
 </body>
+
 </html>
