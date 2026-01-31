@@ -4,15 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description"
-        content="Space science projects - Tools and applications exploring the cosmos, from data visualization platforms to astronomy observation trackers.">
+        content="Short random thoughts, asides, and musings that don't fit the main blog—quick sparks and reflections.">
     <meta name="author" content="The Daily Accretion">
     <meta name="robots" content="index, follow">
-    <title>Projects | The Daily Accretion</title>
-    <link rel="canonical" href="https://accretion.blog/projects/">
+    <title>Random | The Daily Accretion</title>
+    <link rel="canonical" href="https://accretion.blog/random/">
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://accretion.blog/projects/">
-    <meta property="og:title" content="Projects | The Daily Accretion">
-    <meta property="og:description" content="Space science projects exploring the cosmos.">
+    <meta property="og:url" content="https://accretion.blog/random/">
+    <meta property="og:title" content="Random | The Daily Accretion">
+    <meta property="og:description" content="Short random thoughts, asides, and musings that don't fit the main blog—quick sparks and reflections.">
     <link rel="icon" type="image/svg+xml" href="../images/planet.svg">
     <link rel="stylesheet" href="../vanduo.min.css">
     <link rel="stylesheet" href="../icons/phosphor/regular/style.css">
@@ -34,31 +34,42 @@
             padding-bottom: 2rem;
             text-align: center;
         }
-        .project-card {
+        .blog-card {
             transition: transform 0.2s ease, box-shadow 0.2s ease;
         }
-        .project-card:hover {
+        .blog-card:hover {
             transform: translateY(-4px);
             box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
         }
-        .project-card img {
+        .blog-card img {
             width: 100%;
             height: 200px;
             object-fit: cover;
             border-radius: var(--btn-border-radius) var(--btn-border-radius) 0 0;
         }
-        .project-tags {
+        .blog-meta {
             display: flex;
-            gap: 0.5rem;
-            flex-wrap: wrap;
-            margin-top: 1rem;
-        }
-        .project-tag {
-            background: var(--bg-secondary);
-            color: var(--text-muted);
-            padding: 0.25rem 0.75rem;
-            border-radius: 9999px;
+            gap: 1rem;
             font-size: var(--font-size-sm);
+            color: var(--text-muted);
+            margin-bottom: 0.5rem;
+        }
+        .read-more {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.25rem;
+            color: var(--color-primary);
+            text-decoration: none;
+            font-weight: 500;
+        }
+        .read-more:hover {
+            text-decoration: underline;
+        }
+        .read-more i {
+            transition: transform 0.2s ease;
+        }
+        .read-more:hover i {
+            transform: translateX(4px);
         }
     </style>
 </head>
@@ -77,9 +88,9 @@
                 <ul class="navbar-nav">
                     <li><a href="../index.html" class="nav-link">Home</a></li>
                     <li><a href="../blog/" class="nav-link">Blog</a></li>
-                    <li><a href="../random/" class="nav-link">Random</a></li>
+                    <li><a href="./" class="nav-link active">Random</a></li>
                     <li><a href="../about.html" class="nav-link">About</a></li>
-                    <!-- <li><a href="./" class="nav-link active">Projects</a></li> -->
+                    <!-- <li><a href="../projects/" class="nav-link">Projects</a></li> -->
                 </ul>
                 <button class="theme-customizer-trigger" data-theme-customizer-trigger
                     aria-label="Open theme customizer" style="margin-left: auto;">
@@ -91,32 +102,45 @@
     <!-- Page Header -->
     <div class="page-header">
         <div class="container">
-            <h1>Space Science Projects</h1>
-            <p class="text-muted text-lg">Tools and applications exploring the cosmos, from data visualization platforms
-                to astronomy observation trackers and NASA API integrations</p>
+            <h1>Random</h1>
+            <p class="text-muted text-lg">Short random thoughts and asides</p>
         </div>
     </div>
     <!-- Main Content -->
     <main id="main-content">
         <div class="container">
             <div class="row">
-                <!-- Project: Astronomy Observation Tracker -->
+                <!-- Article: Feed Your Head -->
                 <div class="col-12 col-md-6 col-lg-4 mb-6">
-                    <div class="card project-card">
-                        <img src="../images/placeholder-project.jpg" alt="Astronomy Observation Tracker">
+                    <a href="../blog/feed-your-head.html" class="card blog-card" style="text-decoration: none; display: block;">
+                        <img src="../images/alice-and-the-mushroom.png" alt="Feed Your Head">
                         <div class="card-body">
-                            <h3 style="margin-bottom: 0.5rem;">Astronomy Observation Tracker</h3>
-                            <p class="text-muted" style="margin-bottom: 0.5rem;">A mobile and web application that helps
-                                amateur astronomers plan observation sessions, track celestial events, and log their
-                                discoveries. Features real-time sky maps, weather integration, and community sharing of
-                                observations.</p>
-                            <div class="project-tags">
-                                <span class="project-tag">Mobile App</span>
-                                <span class="project-tag">Astronomy</span>
-                                <span class="project-tag">Community</span>
+                            <div class="blog-meta">
+                                <span><i class="ph ph-calendar"></i> Jan 26, 2026</span>
+                                <span><i class="ph ph-clock"></i> 5 min read</span>
                             </div>
+                            <h3 style="margin-bottom: 0.5rem;">Feed Your Head</h3>
+                            <p class="text-muted" style="margin-bottom: 1rem;">Never forget to feed your head</p>
+                            <span class="read-more">Read Article <i class="ph ph-arrow-right"></i></span>
                         </div>
-                    </div>
+                    </a>
+                </div>
+                <!-- Article: Year 2025 is over -->
+                <div class="col-12 col-md-6 col-lg-4 mb-6">
+                    <a href="../blog/year-2025-is-over-finally.html" class="card blog-card"
+                        style="text-decoration: none; display: block;">
+                        <img src="../images/f34c3804-c2b7-4f2c-83b6-e0c6b9431628.jpg" alt="Year 2025 is over. Finally.">
+                        <div class="card-body">
+                            <div class="blog-meta">
+                                <span><i class="ph ph-calendar"></i> Jan 22, 2026</span>
+                                <span><i class="ph ph-clock"></i> 5 min read</span>
+                            </div>
+                            <h3 style="margin-bottom: 0.5rem;">Year 2025 is over. Finally.</h3>
+                            <p class="text-muted" style="margin-bottom: 1rem;">A satirical look at three years of
+                                Generative AI impact</p>
+                            <span class="read-more">Read Article <i class="ph ph-arrow-right"></i></span>
+                        </div>
+                    </a>
                 </div>
             </div>
         </div>
@@ -137,9 +161,9 @@
                         <ul class="footer-links">
                             <li><a href="../index.html">Home</a></li>
                             <li><a href="../blog/">Blog</a></li>
-                            <li><a href="../random/">Random</a></li>
+                            <li><a href="./">Random</a></li>
                             <li><a href="../about.html">About</a></li>
-                            <!-- <li><a href="./">Projects</a></li> -->
+
                         </ul>
                     </div>
                 </div>

@@ -1,0 +1,72 @@
+/* Content-to-footer spacing and footer size overrides */
+
+/* Center nav links between logo and theme button */
+.navbar-menu {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.navbar-menu .theme-customizer-trigger {
+    position: absolute;
+    right: 0;
+}
+
+/* Sticky footer: main content grows so footer always sits at bottom */
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+#main-content {
+    flex: 1 0 auto;
+    margin-bottom: 5rem;
+}
+
+/* Shrink footer height and fonts (~25% reduction) */
+.footer {
+    padding-top: 1.5rem;
+    padding-bottom: 1rem;
+}
+
+.footer-container {
+    padding-top: 0;
+    padding-bottom: 0;
+}
+
+.footer .footer-section h4 {
+    font-size: 0.95rem;
+    margin-bottom: 0.4rem;
+    font-weight: 600;
+}
+
+.footer .footer-section p,
+.footer .footer-links,
+.footer .footer-links a {
+    font-size: 0.8rem;
+    line-height: 1.5;
+}
+
+.footer .footer-section {
+    margin-bottom: 0.5rem;
+}
+
+.footer .footer-section:last-child {
+    margin-bottom: 0;
+}
+
+.footer .row {
+    margin-bottom: 0.5rem;
+}
+
+.footer-bottom {
+    padding-top: 0.75rem;
+    padding-bottom: 0.5rem;
+}
+
+.footer-bottom p {
+    font-size: 0.8rem;
+}

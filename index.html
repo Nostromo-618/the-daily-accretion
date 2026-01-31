@@ -26,12 +26,13 @@
     <meta name="twitter:description" content="Exploring the mind, universe, and everything in between.">
     <meta name="twitter:image" content="https://accretion.blog/images/planet.svg">
     <!-- Favicon -->
-    <link rel="icon" type="image/svg+xml" href="./favicon.svg">
+    <link rel="icon" type="image/svg+xml" href="./images/planet.svg">
     <!-- Vanduo Framework CSS -->
     <link rel="stylesheet" href="./vanduo.min.css">
     <!-- Phosphor Icons -->
     <link rel="stylesheet" href="./icons/phosphor/regular/style.css">
     <link rel="stylesheet" href="./icons/phosphor/fill/style.css">
+    <link rel="stylesheet" href="./custom.css">
     <!-- JSON-LD Structured Data -->
     <script type="application/ld+json">
     {
@@ -92,13 +93,17 @@
             margin: 0 auto;
         }
         .hero-image {
+            display: flex;
+            align-items: center;
+            justify-content: center;
             width: 128px;
             height: 128px;
-            margin-bottom: 1.5rem;
+            margin: 0 auto 1.5rem;
+            font-size: 5rem;
             border-radius: 50%;
             border: 3px solid var(--color-primary);
-            padding: 0.5rem;
             background: var(--bg-primary);
+            color: var(--color-primary);
         }
         .blog-card {
             transition: transform 0.2s ease, box-shadow 0.2s ease;
@@ -156,6 +161,7 @@
                 <ul class="navbar-nav">
                     <li><a href="index.html" class="nav-link active">Home</a></li>
                     <li><a href="blog/" class="nav-link">Blog</a></li>
+                    <li><a href="random/" class="nav-link">Random</a></li>
                     <li><a href="about.html" class="nav-link">About</a></li>
                     <!-- <li><a href="projects/" class="nav-link">Projects</a></li> -->
                 </ul>
@@ -171,7 +177,7 @@
     <section id="hero" class="hero parallax">
         <div class="parallax-layer" data-speed="0.5"></div>
         <div class="parallax-content hero-content">
-            <img src="./images/planet.svg" alt="The Daily Accretion" class="hero-image">
+            <i class="ph-fill ph-planet hero-image" aria-hidden="true"></i>
             <h1>The Daily Accretion</h1>
             <p class="text-lg text-muted">Exploring the mind, universe, and everything in between</p>
         </div>
@@ -237,6 +243,7 @@
                 </div>
                 <div class="text-center mt-6">
                     <a href="blog/" class="btn btn-outline">View All Articles &rarr;</a>
+                    <a href="random/" class="btn btn-outline" style="margin-left: 0.5rem;">Random thoughts</a>
                 </div>
             </section>
         </div>
@@ -257,6 +264,7 @@
                         <ul class="footer-links">
                             <li><a href="index.html">Home</a></li>
                             <li><a href="blog/">Blog</a></li>
+                            <li><a href="random/">Random</a></li>
                             <li><a href="about.html">About</a></li>
                             <!-- <li><a href="projects/">Projects</a></li> -->
                         </ul>
