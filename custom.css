@@ -1,5 +1,19 @@
 /* Content-to-footer spacing and footer size overrides */
 
+/* Ensure page scrolls on all viewports (fix tablet/landscape content not visible) */
+html {
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+/* Tablet and short viewports: prevent hero/parallax from filling viewport so content is visible */
+@media (max-height: 700px), (min-width: 768px) and (max-width: 1024px) {
+    section.hero.parallax {
+        min-height: 0 !important;
+        height: auto !important;
+    }
+}
+
 /* Center nav links between logo and theme button (desktop only) */
 @media (min-width: 768px) {
     .navbar-menu {
