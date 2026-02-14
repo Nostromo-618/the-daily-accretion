@@ -18,11 +18,21 @@
     <meta property="article:published_time" content="2026-01-31">
     <link rel="icon" type="image/svg+xml" href="../favicon.svg">
     <!-- Theme Defaults (before framework loads) -->
+    <!-- Site theme defaults (only on first visit — user changes persist) -->
     <script>
-        localStorage.setItem('vanduo-primary-color', 'teal');
-        localStorage.setItem('vanduo-neutral-color', 'stone');
-        localStorage.setItem('vanduo-radius', '0.25');
-        localStorage.setItem('vanduo-font-preference', 'source-sans');
+        (function() {
+            var defaults = {
+                'vanduo-primary-color': 'teal',
+                'vanduo-neutral-color': 'stone',
+                'vanduo-radius': '0.25',
+                'vanduo-font-preference': 'source-sans'
+            };
+            for (var key in defaults) {
+                if (localStorage.getItem(key) === null) {
+                    localStorage.setItem(key, defaults[key]);
+                }
+            }
+        })();
     </script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Nostromo-618/vanduo-framework@main/dist/vanduo.min.css">
     <link rel="stylesheet" href="../custom.css">
@@ -172,8 +182,14 @@
     </footer>
     <script src="https://cdn.jsdelivr.net/gh/Nostromo-618/vanduo-framework@main/dist/vanduo.min.js"></script>
     <script>
-        // Initialize Vanduo Framework (required for v1.1.x+)
         Vanduo.init();
+        if (window.ThemeCustomizer && window.ThemeCustomizer.DEFAULTS) {
+            window.ThemeCustomizer.DEFAULTS.PRIMARY_LIGHT = 'teal';
+            window.ThemeCustomizer.DEFAULTS.PRIMARY_DARK = 'teal';
+            window.ThemeCustomizer.DEFAULTS.NEUTRAL = 'stone';
+            window.ThemeCustomizer.DEFAULTS.RADIUS = '0.25';
+            window.ThemeCustomizer.DEFAULTS.FONT = 'source-sans';
+        }
     </script>
 </body>
 

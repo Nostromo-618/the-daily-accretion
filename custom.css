@@ -6,6 +6,11 @@ html {
     overflow-x: hidden;
 }
 
+/* Headings use primary dynamic color (theme customizer) */
+h1, h2, h3, h4 {
+    color: var(--vd-color-primary);
+}
+
 /* Tablet and short viewports: prevent hero/parallax from filling viewport so content is visible */
 @media (max-height: 700px), (min-width: 768px) and (max-width: 1024px) {
     section.hero.parallax {
