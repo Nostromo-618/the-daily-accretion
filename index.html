@@ -46,7 +46,7 @@
         })();
     </script>
     <!-- Vanduo Framework CSS (CDN) - includes Phosphor Icons -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Nostromo-618/vanduo-framework@main/dist/vanduo.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Nostromo-618/vanduo-framework@1.2.4/dist/vanduo.min.css">
     <link rel="stylesheet" href="./custom.css">
     <!-- JSON-LD Structured Data -->
     <script type="application/ld+json">
@@ -250,6 +250,10 @@
     </section>
     <!-- Main Content -->
     <main id="main-content">
+        <!-- SPA Loader -->
+        <div id="spa-loader" class="vd-preloader vd-hidden">
+            <div class="vd-spinner-circular"></div>
+        </div>
         <div class="vd-container">
             <!-- Latest Articles -->
             <section id="latest-articles">
@@ -309,44 +313,8 @@
             </section>
         </div>
     </main>
-    <!-- Footer -->
-    <footer class="vd-footer">
-        <div class="vd-footer-container">
-            <div class="vd-row">
-                <div class="vd-col-12 vd-col-md-4">
-                    <div class="vd-footer-section">
-                        <h4>The Daily Accretion</h4>
-                        <p>Exploring the mind, universe, and everything in between.</p>
-                    </div>
-                </div>
-                <div class="vd-col-12 vd-col-md-4">
-                    <div class="vd-footer-section">
-                        <h4>Navigation</h4>
-                        <ul class="vd-footer-links">
-                            <li><a href="index.html">Home</a></li>
-                            <li><a href="blog/">Blog</a></li>
-                            <li><a href="random/">Random</a></li>
-                            <li><a href="about.html">About</a></li>
-                            <!-- <li><a href="projects/">Projects</a></li> -->
-                        </ul>
-                    </div>
-                </div>
-                <div class="vd-col-12 vd-col-md-4">
-                    <div class="vd-footer-section">
-                        <h4>Built With</h4>
-                        <ul class="vd-footer-links">
-                            <li><a href="https://vanduo.dev" target="_blank">Vanduo Framework</a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            <div class="vd-footer-bottom">
-                <p class="vd-text-center vd-text-muted">&copy; 2025-2026 The Daily Accretion.</p>
-            </div>
-        </div>
-    </footer>
     <!-- Scripts (CDN) -->
-    <script src="https://cdn.jsdelivr.net/gh/Nostromo-618/vanduo-framework@main/dist/vanduo.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/Nostromo-618/vanduo-framework@1.2.4/dist/vanduo.min.js"></script>
     <script>
         Vanduo.init();
         // Override framework defaults so "Reset to Defaults" applies site theme
@@ -358,6 +326,7 @@
             window.ThemeCustomizer.DEFAULTS.FONT = 'source-sans';
         }
     </script>
+    <script src="/js/router.js"></script>
 </body>
 
 </html>

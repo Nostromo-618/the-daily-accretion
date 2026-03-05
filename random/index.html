@@ -19,7 +19,7 @@
     <!-- Theme Defaults (before framework loads) -->
     <!-- Site theme defaults (only on first visit — user changes persist) -->
     <script>
-        (function() {
+        (function () {
             var defaults = {
                 'vanduo-primary-color': 'teal',
                 'vanduo-neutral-color': 'stone',
@@ -105,15 +105,31 @@
             transform: translateX(4px);
         }
 
-        /* Uniform card height and width */
+        /* Equal-height cards: row stretches columns, columns stretch card */
+        #main-content .vd-row {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: stretch;
+        }
+
         #main-content .vd-row > [class*="vd-col-"] {
             display: flex;
+            flex-direction: column;
             min-width: 0;
         }
+
+        .blog-card {
+            display: flex !important;
+            flex-direction: column;
+            flex: 1;
+            min-height: 0;
+        }
+
         .blog-card .vd-card-body {
             flex: 1;
             display: flex;
             flex-direction: column;
+            min-height: 0;
         }
 
         .blog-card .vd-card-body p.vd-text-muted {
@@ -163,7 +179,7 @@
                 <!-- Article: Scent of a Tango (latest) -->
                 <div class="vd-col-12 vd-col-md-6 vd-col-lg-4 mb-6">
                     <a href="../blog/scent-of-a-tango.html" class="vd-card vd-card-glow blog-card"
-                        style="text-decoration: none; display: block;">
+                        style="text-decoration: none;">
                         <img src="../images/tango.jpg" alt="Scent of a Tango">
                         <div class="vd-card-body">
                             <div class="blog-meta">
@@ -179,7 +195,7 @@
                 <!-- Article: Hania Rani concert -->
                 <div class="vd-col-12 vd-col-md-6 vd-col-lg-4 mb-6">
                     <a href="../blog/hania-rani-concert.html" class="vd-card vd-card-glow blog-card"
-                        style="text-decoration: none; display: block;">
+                        style="text-decoration: none;">
                         <img src="https://img.youtube.com/vi/sp3B97N67Cw/hqdefault.jpg"
                             alt="Hania Rani — Piano & Electronic Concert">
                         <div class="vd-card-body">
@@ -197,7 +213,7 @@
                 <!-- Article: Feed Your Head -->
                 <div class="vd-col-12 vd-col-md-6 vd-col-lg-4 mb-6">
                     <a href="../blog/feed-your-head.html" class="vd-card vd-card-glow blog-card"
-                        style="text-decoration: none; display: block;">
+                        style="text-decoration: none;">
                         <img src="../images/alice-and-the-mushroom.png" alt="Feed Your Head">
                         <div class="vd-card-body">
                             <div class="blog-meta">
@@ -213,7 +229,7 @@
                 <!-- Article: Year 2025 is over -->
                 <div class="vd-col-12 vd-col-md-6 vd-col-lg-4 mb-6">
                     <a href="../blog/year-2025-is-over-finally.html" class="vd-card vd-card-glow blog-card"
-                        style="text-decoration: none; display: block;">
+                        style="text-decoration: none;">
                         <img src="../images/f34c3804-c2b7-4f2c-83b6-e0c6b9431628.jpg" alt="Year 2025 is over. Finally.">
                         <div class="vd-card-body">
                             <div class="blog-meta">
@@ -230,42 +246,6 @@
             </div>
         </div>
     </main>
-    <!-- Footer -->
-    <footer class="vd-footer">
-        <div class="vd-footer-container">
-            <div class="vd-row">
-                <div class="vd-col-12 vd-col-md-4">
-                    <div class="vd-footer-section">
-                        <h4>The Daily Accretion</h4>
-                        <p>Exploring the mind, universe, and everything in between.</p>
-                    </div>
-                </div>
-                <div class="vd-col-12 vd-col-md-4">
-                    <div class="vd-footer-section">
-                        <h4>Navigation</h4>
-                        <ul class="vd-footer-links">
-                            <li><a href="../index.html">Home</a></li>
-                            <li><a href="../blog/">Blog</a></li>
-                            <li><a href="./">Random</a></li>
-                            <li><a href="../about.html">About</a></li>
-
-                        </ul>
-                    </div>
-                </div>
-                <div class="vd-col-12 vd-col-md-4">
-                    <div class="vd-footer-section">
-                        <h4>Built With</h4>
-                        <ul class="vd-footer-links">
-                            <li><a href="https://vanduo.dev" target="_blank">Vanduo Framework</a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            <div class="vd-footer-bottom">
-                <p class="vd-text-center vd-text-muted">&copy; 2025-2026 The Daily Accretion.</p>
-            </div>
-        </div>
-    </footer>
     <script src="https://cdn.jsdelivr.net/gh/Nostromo-618/vanduo-framework@main/dist/vanduo.min.js"></script>
     <script>
         Vanduo.init();
@@ -277,6 +257,7 @@
             window.ThemeCustomizer.DEFAULTS.FONT = 'source-sans';
         }
     </script>
+    <script src="/js/router.js"></script>
 </body>
 
 </html>

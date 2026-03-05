@@ -46,9 +46,10 @@ Then open http://localhost:3000
 3. Add the article to `blog/index.html` and `index.html`
 4. Update `sitemap.xml`
 
+
 ## Deployment
 
-This site is deployed to Vercel. Push to `main` branch to deploy automatically.
+This site is published using **GitHub Pages**. Push to the `main` branch to deploy automatically via GitHub Actions.
 
 ## Built With
 

@@ -20,7 +20,7 @@
     <!-- Theme Defaults (before framework loads) -->
     <!-- Site theme defaults (only on first visit — user changes persist) -->
     <script>
-        (function() {
+        (function () {
             var defaults = {
                 'vanduo-primary-color': 'teal',
                 'vanduo-neutral-color': 'stone',
@@ -43,75 +43,6 @@
 
         .vd-navbar-brand {
             margin-left: 1rem;
-        }
-
-        .article-header {
-            padding-top: 100px;
-            padding-bottom: 2rem;
-        }
-
-        .article-hero-image {
-            width: 100%;
-            max-height: 500px;
-            object-fit: cover;
-            border-radius: var(--vd-btn-border-radius);
-            margin-bottom: 2rem;
-        }
-
-        .article-meta {
-            display: flex;
-            gap: 1.5rem;
-            font-size: var(--vd-font-size-sm);
-            color: var(--vd-text-muted);
-            margin-bottom: 2rem;
-            flex-wrap: wrap;
-        }
-
-        .article-content {
-            max-width: 800px;
-            margin: 0 auto;
-            font-size: 1.1rem;
-            line-height: 1.9;
-        }
-
-        .article-content p {
-            margin-bottom: 1.5rem;
-        }
-
-        .article-content ul {
-            margin-bottom: 1.5rem;
-            padding-left: 1.5rem;
-        }
-
-        .article-content li {
-            margin-bottom: 0.5rem;
-        }
-
-        .article-content blockquote {
-            border-left: 4px solid var(--vd-color-primary);
-            padding-left: 1.5rem;
-            margin: 2rem 0;
-            font-style: italic;
-            color: var(--vd-text-muted);
-        }
-
-        .article-content hr {
-            margin: 3rem 0;
-            border: none;
-            border-top: 1px solid var(--vd-border-color);
-        }
-
-        .back-link {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            color: var(--vd-text-muted);
-            text-decoration: none;
-            margin-bottom: 2rem;
-        }
-
-        .back-link:hover {
-            color: var(--vd-color-primary);
         }
     </style>
 </head>
@@ -177,42 +108,6 @@
             </div>
         </article>
     </main>
-    <!-- Footer -->
-    <footer class="vd-footer">
-        <div class="vd-footer-container">
-            <div class="vd-row">
-                <div class="vd-col-12 vd-col-md-4">
-                    <div class="vd-footer-section">
-                        <h4>The Daily Accretion</h4>
-                        <p>Exploring the mind, universe, and everything in between.</p>
-                    </div>
-                </div>
-                <div class="vd-col-12 vd-col-md-4">
-                    <div class="vd-footer-section">
-                        <h4>Navigation</h4>
-                        <ul class="vd-footer-links">
-                            <li><a href="../index.html">Home</a></li>
-                            <li><a href="./">Blog</a></li>
-                            <li><a href="../random/">Random</a></li>
-                            <li><a href="../about.html">About</a></li>
-
-                        </ul>
-                    </div>
-                </div>
-                <div class="vd-col-12 vd-col-md-4">
-                    <div class="vd-footer-section">
-                        <h4>Built With</h4>
-                        <ul class="vd-footer-links">
-                            <li><a href="https://vanduo.dev" target="_blank">Vanduo Framework</a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            <div class="vd-footer-bottom">
-                <p class="vd-text-center vd-text-muted">&copy; 2025-2026 The Daily Accretion.</p>
-            </div>
-        </div>
-    </footer>
     <script src="https://cdn.jsdelivr.net/gh/Nostromo-618/vanduo-framework@main/dist/vanduo.min.js"></script>
     <script>
         Vanduo.init();
@@ -224,6 +119,7 @@
             window.ThemeCustomizer.DEFAULTS.FONT = 'source-sans';
         }
     </script>
+    <script src="/js/router.js"></script>
 </body>
 
 </html>

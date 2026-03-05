@@ -18,7 +18,7 @@
     <!-- Theme Defaults (before framework loads) -->
     <!-- Site theme defaults (only on first visit — user changes persist) -->
     <script>
-        (function() {
+        (function () {
             var defaults = {
                 'vanduo-primary-color': 'teal',
                 'vanduo-neutral-color': 'stone',
@@ -140,7 +140,8 @@
             <div class="vd-row">
                 <!-- Article: AI Bliss -->
                 <div class="vd-col-12 vd-col-md-6 vd-col-lg-4 mb-6">
-                    <a href="ai-bliss.html" class="vd-card vd-card-glow blog-card" style="text-decoration: none; display: block;">
+                    <a href="ai-bliss.html" class="vd-card vd-card-glow blog-card"
+                        style="text-decoration: none; display: block;">
                         <img src="../images/2_bots.png" alt="AI Bliss">
                         <div class="vd-card-body">
                             <div class="blog-meta">
@@ -157,41 +158,6 @@
             </div>
         </div>
     </main>
-    <!-- Footer -->
-    <footer class="vd-footer">
-        <div class="vd-footer-container">
-            <div class="vd-row">
-                <div class="vd-col-12 vd-col-md-4">
-                    <div class="vd-footer-section">
-                        <h4>The Daily Accretion</h4>
-                        <p>Exploring the mind, universe, and everything in between.</p>
-                    </div>
-                </div>
-                <div class="vd-col-12 vd-col-md-4">
-                    <div class="vd-footer-section">
-                        <h4>Navigation</h4>
-                        <ul class="vd-footer-links">
-                            <li><a href="../index.html">Home</a></li>
-                            <li><a href="./">Blog</a></li>
-                            <li><a href="../random/">Random</a></li>
-                            <li><a href="../about.html">About</a></li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="vd-col-12 vd-col-md-4">
-                    <div class="vd-footer-section">
-                        <h4>Built With</h4>
-                        <ul class="vd-footer-links">
-                            <li><a href="https://vanduo.dev" target="_blank">Vanduo Framework</a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            <div class="vd-footer-bottom">
-                <p class="vd-text-center vd-text-muted">&copy; 2025-2026 The Daily Accretion.</p>
-            </div>
-        </div>
-    </footer>
     <script src="https://cdn.jsdelivr.net/gh/Nostromo-618/vanduo-framework@main/dist/vanduo.min.js"></script>
     <script>
         Vanduo.init();
@@ -203,6 +169,7 @@
             window.ThemeCustomizer.DEFAULTS.FONT = 'source-sans';
         }
     </script>
+    <script src="/js/router.js"></script>
 </body>
 
 </html>

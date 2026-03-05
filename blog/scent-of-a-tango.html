@@ -20,7 +20,7 @@
     <!-- Theme Defaults (before framework loads) -->
     <!-- Site theme defaults (only on first visit — user changes persist) -->
     <script>
-        (function() {
+        (function () {
             var defaults = {
                 'vanduo-primary-color': 'teal',
                 'vanduo-neutral-color': 'stone',
@@ -45,55 +45,8 @@
             margin-left: 1rem;
         }
 
-        .article-header {
-            padding-top: 100px;
-            padding-bottom: 2rem;
-        }
-
         .article-hero-image {
-            width: 100%;
-            max-height: 500px;
-            object-fit: cover;
             object-position: top center;
-            border-radius: var(--vd-btn-border-radius);
-            margin-bottom: 2rem;
-        }
-
-        .article-meta {
-            display: flex;
-            gap: 1.5rem;
-            font-size: var(--vd-font-size-sm);
-            color: var(--vd-text-muted);
-            margin-bottom: 2rem;
-            flex-wrap: wrap;
-        }
-
-        .article-content {
-            max-width: 800px;
-            margin: 0 auto;
-            font-size: 1.1rem;
-            line-height: 1.9;
-        }
-
-        .article-content p {
-            margin-bottom: 1.5rem;
-        }
-
-        .article-content a {
-            color: var(--vd-color-primary);
-        }
-
-        .back-link {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            color: var(--vd-text-muted);
-            text-decoration: none;
-            margin-bottom: 2rem;
-        }
-
-        .back-link:hover {
-            color: var(--vd-color-primary);
         }
     </style>
 </head>
@@ -138,51 +91,24 @@
             </header>
             <img src="../images/tango2.jpg" alt="Tango scene from Scent of a Tango" class="article-hero-image">
             <div class="article-content">
-                <p>Sometimes I watch simple movies. Not some fancy award-winning ones, but the ones that are just good enough just for a pure joy of watching and forgetting about life just for a moment.</p>
-                <p>This one maybe not one of these i would watch over and over again, but it's one of those that sticks around for a single scene as much as for the whole story. And that scene is the tango.</p>
-                <p>Just before the tango, young and very beautiful Donna hesitates, and then says yes. When the charming blind colonel asks her to dance, she says that she is afraid, afraid to do mistake. And you gotta love what Frank then replies:</p>
+                <p>Sometimes I watch simple movies. Not some fancy award-winning ones, but the ones that are just good
+                    enough just for a pure joy of watching and forgetting about life just for a moment.</p>
+                <p>This one maybe not one of these i would watch over and over again, but it's one of those that sticks
+                    around for a single scene as much as for the whole story. And that scene is the tango.</p>
+                <p>Just before the tango, young and very beautiful Donna hesitates, and then says yes. When the charming
+                    blind colonel asks her to dance, she says that she is afraid, afraid to do mistake. And you gotta
+                    love what Frank then replies:</p>
                 <p><em>"No mistakes in the tango, Donna. Not like life. It's simple. Just tango on"</em></p>
-                <p><em>Scent of a Woman</em> (1992) is one of those films that sticks around for a single scene as much as for the whole story. Lieutenant Colonel Frank Slade—blind, bitter, and brilliantly played by Al Pacino—takes a weekend in New York with Charlie, a young prep-school student. What starts as a paid gig turns into a lesson in how to live: risk, honesty, and the tango.</p>
-                <p>If you haven't seen it, or want to revisit the film and that scene, it's all there: <a href="https://www.imdb.com/title/tt0105323/" target="_blank" rel="noopener noreferrer">Scent of a Woman on IMDb</a>.</p>
+                <p><em>Scent of a Woman</em> (1992) is one of those films that sticks around for a single scene as much
+                    as for the whole story. Lieutenant Colonel Frank Slade—blind, bitter, and brilliantly played by Al
+                    Pacino—takes a weekend in New York with Charlie, a young prep-school student. What starts as a paid
+                    gig turns into a lesson in how to live: risk, honesty, and the tango.</p>
+                <p>If you haven't seen it, or want to revisit the film and that scene, it's all there: <a
+                        href="https://www.imdb.com/title/tt0105323/" target="_blank" rel="noopener noreferrer">Scent of
+                        a Woman on IMDb</a>.</p>
             </div>
         </article>
     </main>
-    <!-- Footer -->
-    <footer class="vd-footer">
-        <div class="vd-footer-container">
-            <div class="vd-row">
-                <div class="vd-col-12 vd-col-md-4">
-                    <div class="vd-footer-section">
-                        <h4>The Daily Accretion</h4>
-                        <p>Exploring the mind, universe, and everything in between.</p>
-                    </div>
-                </div>
-                <div class="vd-col-12 vd-col-md-4">
-                    <div class="vd-footer-section">
-                        <h4>Navigation</h4>
-                        <ul class="vd-footer-links">
-                            <li><a href="../index.html">Home</a></li>
-                            <li><a href="./">Blog</a></li>
-                            <li><a href="../random/">Random</a></li>
-                            <li><a href="../about.html">About</a></li>
-
-                        </ul>
-                    </div>
-                </div>
-                <div class="vd-col-12 vd-col-md-4">
-                    <div class="vd-footer-section">
-                        <h4>Built With</h4>
-                        <ul class="vd-footer-links">
-                            <li><a href="https://vanduo.dev" target="_blank">Vanduo Framework</a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            <div class="vd-footer-bottom">
-                <p class="vd-text-center vd-text-muted">&copy; 2025-2026 The Daily Accretion.</p>
-            </div>
-        </div>
-    </footer>
     <script src="https://cdn.jsdelivr.net/gh/Nostromo-618/vanduo-framework@main/dist/vanduo.min.js"></script>
     <script>
         Vanduo.init();
@@ -194,6 +120,7 @@
             window.ThemeCustomizer.DEFAULTS.FONT = 'source-sans';
         }
     </script>
+    <script src="/js/router.js"></script>
 </body>
 
 </html>
