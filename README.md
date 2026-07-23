@@ -6,7 +6,7 @@ A personal blog built with **Vue 3** and [`@vanduo-oss/vd3`](https://www.npmjs.c
 
 ## Live Site
 
-**https://accretion.blog**
+**https://nostromo-618.github.io/the-daily-accretion/**
 
 ## Tech Stack
 
@@ -31,7 +31,6 @@ pnpm preview    # preview the production build
 ├── index.html              # Vite entry + no-FOUC theme bootstrap
 ├── vite.config.ts          # Vite + vite-ssg config (route pre-render list)
 ├── public/                 # Copied verbatim into dist
-│   ├── CNAME               # accretion.blog custom domain
 │   ├── robots.txt · sitemap.xml · favicon.svg · 404.html
 │   ├── images/             # Article + page images
 │   └── blog/*.html         # Redirect stubs: old .html URLs → clean URLs
@@ -61,8 +60,8 @@ pnpm preview    # preview the production build
 Brand defaults (teal / stone / `0.25` radius / Source Sans) are set once in
 [`src/main.ts`](src/main.ts) via `VanduoVue({ themeDefaults })`, and mirrored
 pre-hydration in [`index.html`](index.html) to avoid a flash. Visitors can still
-change palette, dark/light mode, radius and font via the in-nav theme switcher
-and customizer; their choices persist in `localStorage`.
+change palette, dark/light mode, radius and font via the in-nav theme switcher;
+their choices persist in `localStorage`.
 
 ## Deployment
 
