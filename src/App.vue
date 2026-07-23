@@ -8,7 +8,7 @@ import { SITE } from '@/data/site'
 useHead({
   htmlAttrs: { lang: 'en' },
   meta: [{ name: 'theme-color', content: '#0d9488' }],
-  link: [{ rel: 'icon', type: 'image/svg+xml', href: '/favicon.svg' }],
+  link: [{ rel: 'icon', type: 'image/svg+xml', href: `${import.meta.env.BASE_URL}favicon.svg` }],
 })
 
 void SITE
