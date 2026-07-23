@@ -10,6 +10,8 @@ export interface SeoInput {
   image?: string
   type?: 'website' | 'article'
   publishedTime?: string
+  /** Defaults to `index, follow`. Pass `noindex, follow` for error pages. */
+  robots?: string
   /** Extra JSON-LD structured-data objects. */
   jsonLd?: Record<string, unknown>[]
 }
@@ -24,6 +26,7 @@ export function useSeo(input: SeoInput = {}) {
   const canonical = abs(input.path ?? '/')
   const image = abs(input.image ?? SITE.defaultImage)
   const type = input.type ?? 'website'
+  const robots = input.robots ?? 'index, follow'
 
   const scripts = (input.jsonLd ?? []).map((obj) => ({
     type: 'application/ld+json',
@@ -36,7 +39,7 @@ export function useSeo(input: SeoInput = {}) {
     meta: [
       { name: 'description', content: description },
       { name: 'author', content: SITE.author },
-      { name: 'robots', content: 'index, follow' },
+      { name: 'robots', content: robots },
       // Open Graph
       { property: 'og:type', content: type },
       { property: 'og:site_name', content: SITE.name },

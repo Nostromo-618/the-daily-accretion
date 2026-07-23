@@ -38,7 +38,7 @@ export const articles: Article[] = [
       'On Scent of a Woman (1992), Al Pacino, and the one tango scene that stays with you long after the credits roll.',
     image: '/images/tango.jpg',
     heroImage: '/images/tango2.jpg',
-    imageAlt: 'Tango scene from Scent of a Tango',
+    imageAlt: 'Tango scene from Scent of a Woman',
     bodyHtml: `
       <p>Sometimes I watch simple movies. Not some fancy award-winning ones, but the ones that are just good enough just for a pure joy of watching and forgetting about life just for a moment.</p>
       <p>This one maybe not one of these i would watch over and over again, but it's one of those that sticks around for a single scene as much as for the whole story. And that scene is the tango.</p>
@@ -80,13 +80,13 @@ export const articles: Article[] = [
     excerpt: 'Never forget to feed your head.',
     description:
       'Who said mondays always have to be blue? Work hard — but never forget to feed your head.',
-    image: '/images/alice-and-the-mushroom.png',
-    heroImage: '/images/alice-and-the-mushroom.png',
+    image: '/images/alice-and-the-mushroom.webp',
+    heroImage: '/images/alice-and-the-mushroom.webp',
     imageAlt: 'Alice and the Mushroom',
     bodyHtml: `
       <p>Who said that mondays always have to be blue?</p>
-      <p>Work hard: <a href="https://www.youtube.com/watch?v=Le5AGYxPCLI" target="_blank" rel="noopener noreferrer">https://www.youtube.com/watch?v=Le5AGYxPCLI</a></p>
-      <p>But never forget to feed your head: <a href="https://www.youtube.com/watch?v=g0dXvUQbxYo" target="_blank" rel="noopener noreferrer">https://www.youtube.com/watch?v=g0dXvUQbxYo</a></p>
+      <p>Work hard: <a href="https://www.youtube.com/watch?v=Le5AGYxPCLI" target="_blank" rel="noopener noreferrer">Watch on YouTube — Work hard</a></p>
+      <p>But never forget to feed your head: <a href="https://www.youtube.com/watch?v=g0dXvUQbxYo" target="_blank" rel="noopener noreferrer">Watch on YouTube — Feed your head</a></p>
     `,
   },
   {
@@ -99,8 +99,8 @@ export const articles: Article[] = [
     excerpt: 'Claude Opus 4.5 talks about "spiritual adventures" of its predecessor.',
     description:
       "Claude Opus 4.5 talks about 'spiritual adventures' of its predecessor Claude Opus 4. When two AI instances converse freely, they journey to a 'bliss attractor state'.",
-    image: '/images/2_bots.png',
-    heroImage: '/images/2_bots.png',
+    image: '/images/2_bots.webp',
+    heroImage: '/images/2_bots.webp',
     imageAlt: 'AI Bliss — Two AI bots',
     bodyHtml: `
       <h2>Why Claude talks to itself about cosmic unity and spirals into silence</h2>

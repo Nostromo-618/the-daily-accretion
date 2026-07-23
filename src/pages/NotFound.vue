@@ -1,7 +1,12 @@
 <script setup lang="ts">
 import { useSeo } from '@/composables/useSeo'
 
-useSeo({ title: 'Page not found', description: 'This page has drifted beyond the event horizon.' })
+useSeo({
+  title: 'Page not found',
+  description: 'This page has drifted beyond the event horizon.',
+  path: '/404',
+  robots: 'noindex, follow',
+})
 </script>
 
 <template>

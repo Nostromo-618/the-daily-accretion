@@ -5,14 +5,27 @@ import type { Directive } from 'vue'
 // for SEO crawlers and no-JS fallbacks.
 export const reveal: Directive<HTMLElement> = {
   mounted(el, binding) {
-    el.classList.add('reveal')
     const delay = Number(binding.value) || 0
     if (delay) el.style.transitionDelay = `${delay}ms`
 
     if (typeof IntersectionObserver === 'undefined') {
-      el.classList.add('is-visible')
       return
     }
+
+    const revealIfNeeded = () => {
+      const rect = el.getBoundingClientRect()
+      const inView = rect.top < window.innerHeight * 0.92 && rect.bottom > 0
+      if (inView) {
+        el.classList.add('is-visible')
+        return false
+      }
+      el.classList.add('reveal')
+      return true
+    }
+
+    const needsReveal = revealIfNeeded()
+    if (!needsReveal) return
+
     const io = new IntersectionObserver(
       (entries) => {
         for (const entry of entries) {

@@ -6,7 +6,7 @@ defineProps<{ article: Article }>()
 </script>
 
 <template>
-  <RouterLink :to="`/blog/${article.slug}`" class="post-card" :aria-label="article.title">
+  <RouterLink :to="`/blog/${article.slug}`" class="post-card">
     <div class="post-card__media">
       <span class="post-card__badge">
         <VdBadge :variant="article.section === 'blog' ? 'primary' : 'info'" pill>
@@ -18,7 +18,9 @@ defineProps<{ article: Article }>()
 
     <div class="post-card__body">
       <div class="post-card__meta">
-        <span><i class="ph ph-calendar" aria-hidden="true"></i> {{ article.dateLabel }}</span>
+        <time :datetime="article.date">
+          <i class="ph ph-calendar" aria-hidden="true"></i> {{ article.dateLabel }}
+        </time>
         <span><i class="ph ph-clock" aria-hidden="true"></i> {{ article.readTime }}</span>
       </div>
       <h3>{{ article.title }}</h3>

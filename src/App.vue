@@ -16,6 +16,7 @@ void SITE
 
 <template>
   <div class="app-shell">
+    <a href="#main-content" class="skip-link">Skip to content</a>
     <SiteNav />
     <main id="main-content" class="app-main">
       <RouterView v-slot="{ Component, route }">

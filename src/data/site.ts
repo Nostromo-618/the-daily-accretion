@@ -8,7 +8,7 @@ export const SITE = {
   author: 'The Daily Accretion',
   locale: 'en_US',
   twitter: 'summary_large_image',
-  defaultImage: '/images/planet.svg',
+  defaultImage: '/images/og-default.jpg',
 } as const
 
 export interface NavItem {

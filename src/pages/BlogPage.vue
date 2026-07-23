@@ -17,8 +17,8 @@ useSeo({
   <div>
     <header class="page-header">
       <span class="eyebrow"><i class="ph ph-article" aria-hidden="true"></i> Long-form</span>
-      <h1>Latest Articles</h1>
-      <p>Deeper explorations, thoughts, and musings.</p>
+      <h1>Articles</h1>
+      <p>Long-form explorations, thoughts, and musings.</p>
     </header>
 
     <section class="section" style="padding-top: 0">

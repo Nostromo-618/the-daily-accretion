@@ -26,6 +26,23 @@ body {
   color: var(--vd-text-primary);
 }
 
+.skip-link {
+  position: absolute;
+  top: -100%;
+  left: 1rem;
+  z-index: 2000;
+  padding: 0.65rem 1rem;
+  border-radius: var(--vd-border-radius);
+  background: var(--vd-bg-secondary);
+  color: var(--vd-color-primary);
+  font-weight: var(--vd-font-weight-semibold);
+  box-shadow: var(--vd-shadow-md);
+}
+
+.skip-link:focus {
+  top: 1rem;
+}
+
 /* App shell → sticky footer */
 .app-shell {
   display: flex;
@@ -75,6 +92,12 @@ a {
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
+}
+
+@media (max-width: 420px) {
+  .da-nav .brand .brand-name {
+    font-size: 1rem;
+  }
 }
 
 .da-nav .nav-actions {
@@ -231,7 +254,7 @@ a {
    ========================================================================= */
 .post-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 300px), 1fr));
   gap: clamp(1.25rem, 3vw, 2rem);
 }
 
@@ -309,7 +332,8 @@ a {
   margin-bottom: 0.6rem;
 }
 
-.post-card__meta span {
+.post-card__meta span,
+.post-card__meta time {
   display: inline-flex;
   align-items: center;
   gap: 0.3rem;
@@ -444,7 +468,8 @@ a {
   color: var(--vd-text-muted);
 }
 
-.article-meta span {
+.article-meta span,
+.article-meta time {
   display: inline-flex;
   align-items: center;
   gap: 0.4rem;
@@ -475,6 +500,15 @@ a {
   font-weight: var(--vd-font-weight-bold);
   padding: 0.3rem 0.6rem 0 0;
   color: var(--vd-color-primary);
+}
+
+.article-content--no-dropcap > p:first-of-type::first-letter {
+  float: none;
+  font-size: inherit;
+  line-height: inherit;
+  font-weight: inherit;
+  padding: 0;
+  color: inherit;
 }
 
 .article-content h2 {
@@ -630,6 +664,8 @@ a {
   display: block;
   width: 100%;
   max-width: 640px;
+  max-height: min(70vh, 720px);
+  object-fit: cover;
   border-radius: var(--vd-border-radius-lg);
   box-shadow: var(--vd-shadow-lg);
   margin: 0 auto 2.5rem;
@@ -826,4 +862,15 @@ a {
   .da-footer .footer-inner {
     flex-direction: column;
   }
+}
+
+/* Dark mode: long-form body needs stronger contrast than --vd-text-secondary. */
+html[data-theme='dark'] .article-content,
+html[data-theme='dark'] .about-content {
+  color: var(--vd-text-primary);
+}
+
+html[data-theme='dark'] .article-meta,
+html[data-theme='dark'] .post-card__meta {
+  color: var(--vd-text-secondary);
 }

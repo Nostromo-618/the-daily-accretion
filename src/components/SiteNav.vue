@@ -1,16 +1,11 @@
 <script setup lang="ts">
 import { useRoute } from 'vue-router'
-import { VdNavbar, VdThemeSwitcher, VdThemeCustomizer } from '@vanduo-oss/vd3'
+import { VdNavbar, VdThemeSwitcher } from '@vanduo-oss/vd3'
 import { NAV, SITE } from '@/data/site'
 
 const route = useRoute()
 
-const isActive = (to: string): boolean => {
-  const p = route.path
-  if (to === '/') return p === '/'
-  if (to === '/blog') return p === '/blog' || p.startsWith('/blog/')
-  return p === to || p.startsWith(to + '/')
-}
+const isActive = (to: string): boolean => route.path === to
 </script>
 
 <template>
@@ -37,7 +32,6 @@ const isActive = (to: string): boolean => {
     <template #actions>
       <div class="nav-actions">
         <VdThemeSwitcher align="end" />
-        <VdThemeCustomizer />
       </div>
     </template>
   </VdNavbar>

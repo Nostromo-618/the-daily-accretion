@@ -11,8 +11,9 @@ const article = computed(() => getArticle(slug.value))
 
 const backTo = computed(() => (article.value?.section === 'blog' ? '/blog' : '/random'))
 const backLabel = computed(() => (article.value?.section === 'blog' ? 'Back to Blog' : 'Back to Random'))
+const hasLeadingHeading = computed(() => article.value?.bodyHtml.trim().startsWith('<h2') ?? false)
 
-// SEO (guarded — SSG only renders known slugs, but stay safe on client nav).
+// SEO — SSG renders known slugs; client nav to unknown slugs gets noindex.
 if (article.value) {
   const a = article.value
   useSeo({
@@ -36,6 +37,13 @@ if (article.value) {
         mainEntityOfPage: `${SITE.url}/blog/${a.slug}`,
       },
     ],
+  })
+} else {
+  useSeo({
+    title: 'Article not found',
+    description: 'That article seems to have drifted beyond the event horizon.',
+    path: `/blog/${slug.value}`,
+    robots: 'noindex, follow',
   })
 }
 
@@ -77,9 +85,11 @@ onBeforeUnmount(() => {
         <header class="article-head">
           <h1>{{ article.title }}</h1>
           <div class="article-meta">
-            <span><i class="ph ph-calendar" aria-hidden="true"></i> {{ article.dateLabel }}</span>
+            <time :datetime="article.date">
+              <i class="ph ph-calendar" aria-hidden="true"></i> {{ article.dateLabel }}
+            </time>
             <span><i class="ph ph-clock" aria-hidden="true"></i> {{ article.readTime }}</span>
-            <span><i class="ph ph-user" aria-hidden="true"></i> The Daily Accretion</span>
+            <span><i class="ph ph-user" aria-hidden="true"></i> {{ SITE.author }}</span>
           </div>
         </header>
 
@@ -90,9 +100,11 @@ onBeforeUnmount(() => {
           class="article-hero-image"
         />
 
-        <!-- Trusted, authored content -->
-        <!-- eslint-disable-next-line vue/no-v-html -->
-        <div class="article-content" v-html="article.bodyHtml"></div>
+        <div
+          class="article-content"
+          :class="{ 'article-content--no-dropcap': hasLeadingHeading }"
+          v-html="article.bodyHtml"
+        />
 
         <div class="article-nav">
           <RouterLink :to="backTo" class="vd-btn vd-btn-ghost-primary">
