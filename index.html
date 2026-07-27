@@ -12,11 +12,43 @@
     -->
     <script>
       (function () {
+        // Transparent storage key mapping: re-route 'vanduo-*' keys to 'tda-*'
+        // for site-isolation on the same domain without interfering with vd3-docs.
+        try {
+          var origGet = localStorage.getItem.bind(localStorage);
+          var origSet = localStorage.setItem.bind(localStorage);
+          var origRemove = localStorage.removeItem.bind(localStorage);
+
+          var mapKey = function (key) {
+            if (typeof key === 'string' && key.indexOf('vanduo-') === 0) {
+              var mapped = 'tda-' + key.slice(7);
+              // Migration check: if mapped key is missing but original exists, copy once
+              if (origGet(mapped) === null) {
+                var oldVal = origGet(key);
+                if (oldVal !== null) origSet(mapped, oldVal);
+              }
+              return mapped;
+            }
+            return key;
+          };
+
+          localStorage.getItem = function (key) {
+            return origGet(mapKey(key));
+          };
+          localStorage.setItem = function (key, val) {
+            return origSet(mapKey(key), val);
+          };
+          localStorage.removeItem = function (key) {
+            return origRemove(mapKey(key));
+          };
+        } catch (e) {}
+
+        // Pre-hydration theme bootstrap using isolated site keys ('tda-*')
         var DEFAULTS = {
-          'vanduo-primary-color': 'teal',
-          'vanduo-neutral-color': 'stone',
-          'vanduo-radius': '0.25',
-          'vanduo-font-preference': 'source-sans',
+          'tda-primary-color': 'teal',
+          'tda-neutral-color': 'stone',
+          'tda-radius': '0.25',
+          'tda-font-preference': 'source-sans',
         };
         var el = document.documentElement;
         try {
@@ -24,17 +56,17 @@
             if (localStorage.getItem(k) === null) localStorage.setItem(k, DEFAULTS[k]);
           }
           var map = {
-            'vanduo-primary-color': 'data-primary',
-            'vanduo-neutral-color': 'data-neutral',
-            'vanduo-radius': 'data-radius',
-            'vanduo-font-preference': 'data-font',
-            'vanduo-palette': 'data-palette',
+            'tda-primary-color': 'data-primary',
+            'tda-neutral-color': 'data-neutral',
+            'tda-radius': 'data-radius',
+            'tda-font-preference': 'data-font',
+            'tda-palette': 'data-palette',
           };
           for (var key in map) {
             var v = localStorage.getItem(key);
             if (v && v !== 'system') el.setAttribute(map[key], v);
           }
-          var theme = localStorage.getItem('vanduo-theme-preference');
+          var theme = localStorage.getItem('tda-theme-preference');
           if (theme === 'light' || theme === 'dark') {
             el.setAttribute('data-theme', theme);
           } else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {

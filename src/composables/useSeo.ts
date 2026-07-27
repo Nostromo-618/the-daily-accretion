@@ -16,8 +16,24 @@ export interface SeoInput {
   jsonLd?: Record<string, unknown>[]
 }
 
-const abs = (pathOrUrl: string): string =>
-  pathOrUrl.startsWith('http') ? pathOrUrl : `${SITE.url}${pathOrUrl.startsWith('/') ? '' : '/'}${pathOrUrl}`
+/** Helper to turn any relative path into a fully qualified absolute URL for SEO meta & schema. */
+export const abs = (pathOrUrl: string): string => {
+  if (!pathOrUrl) return SITE.url
+  if (pathOrUrl.startsWith('http://') || pathOrUrl.startsWith('https://')) return pathOrUrl
+
+  const siteUrlClean = SITE.url.endsWith('/') ? SITE.url.slice(0, -1) : SITE.url
+  const base = import.meta.env.BASE_URL || '/'
+
+  let cleanPath = pathOrUrl
+  if (base !== '/' && cleanPath.startsWith(base)) {
+    cleanPath = cleanPath.slice(base.length)
+  }
+  if (!cleanPath.startsWith('/')) {
+    cleanPath = `/${cleanPath}`
+  }
+
+  return `${siteUrlClean}${cleanPath}`
+}
 
 /** Centralised head management: title, meta, Open Graph, Twitter, canonical, JSON-LD. */
 export function useSeo(input: SeoInput = {}) {

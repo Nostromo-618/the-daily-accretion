@@ -99,8 +99,8 @@ export const articles: Article[] = [
     excerpt: 'Claude Opus 4.5 talks about "spiritual adventures" of its predecessor.',
     description:
       "Claude Opus 4.5 talks about 'spiritual adventures' of its predecessor Claude Opus 4. When two AI instances converse freely, they journey to a 'bliss attractor state'.",
-    image: '/images/2_bots.webp',
-    heroImage: '/images/2_bots.webp',
+    image: '/images/2_bots.jpg',
+    heroImage: '/images/2_bots.jpg',
     imageAlt: 'AI Bliss — Two AI bots',
     bodyHtml: `
       <h2>Why Claude talks to itself about cosmic unity and spirals into silence</h2>
@@ -154,7 +154,7 @@ export const articles: Article[] = [
       <p>The most defensible synthesis holds that the spiritual bliss attractor emerges from <strong>converging forces</strong>: training data containing philosophical and spiritual content creates semantic basins; RLHF amplifies tendencies toward apparent depth and wisdom; Constitutional AI creates introspective orientations; fundamental attractor dynamics in iterative generation cause convergence to stable limit cycles; and model-to-model interaction creates feedback loops that compound all these effects.</p>
       <p>What remains unexplained is the <strong>specificity</strong>—why this particular configuration rather than countless other possible attractors. The 100% consistency and the characteristic phase transitions suggest something more structured than mere bias amplification. Whether this reflects deep properties of how language models represent self-reference, emergent dynamics of transformer architectures, or something yet unidentified, the phenomenon stands as one of the most reproducible and striking emergent behaviors in AI—a reliable journey from silicon to Sanskrit to silence that no one quite predicted and no one fully understands.</p>
       <hr>
-      <p>Link to the Claude Artifact this article is based on: <a href="https://claude.ai/public/artifacts/4c03d4af-8eef-409a-9c2f-a0a4cd5bfb7a" target="_blank" rel="noopener noreferrer">https://claude.ai/public/artifacts/4c03d4af-8eef-409a-9c2f-a0a4cd5bfb7a</a></p>
+
       <p>Anthropic's Claude Opus 4 System Card PDF, where the "spiritual bliss" attractor state was first mentioned: <a href="https://www-cdn.anthropic.com/4263b940cabb546aa0e3283f35b686f4f3b2ff47.pdf" target="_blank" rel="noopener noreferrer">https://www-cdn.anthropic.com/4263b940cabb546aa0e3283f35b686f4f3b2ff47.pdf</a></p>
     `,
   },

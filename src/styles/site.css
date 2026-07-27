@@ -478,8 +478,11 @@ a {
 .article-hero-image {
   display: block;
   width: 100%;
-  max-height: 520px;
+  max-width: 960px;
+  height: auto;
+  max-height: min(75vh, 640px);
   object-fit: cover;
+  object-position: center;
   border-radius: var(--vd-border-radius-lg);
   margin: 0 auto 2.75rem;
   box-shadow: var(--vd-shadow-lg);
@@ -666,6 +669,7 @@ a {
   max-width: 640px;
   max-height: min(70vh, 720px);
   object-fit: cover;
+  object-position: center top;
   border-radius: var(--vd-border-radius-lg);
   box-shadow: var(--vd-shadow-lg);
   margin: 0 auto 2.5rem;
@@ -696,6 +700,42 @@ a {
 .about-highlight {
   color: var(--vd-color-primary);
   font-weight: var(--vd-font-weight-semibold);
+}
+
+.about-sidequest-card {
+  margin: 2.25rem 0;
+  padding: 1.75rem;
+  border-radius: var(--vd-border-radius-lg);
+  background: var(--vd-bg-secondary);
+  border: 1px solid var(--vd-border-subtle);
+  transition: border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.about-sidequest-card:hover {
+  border-color: var(--vd-color-primary-alpha-30);
+  box-shadow: var(--vd-shadow-md);
+}
+
+.about-sidequest-card h3 {
+  margin: 0.85rem 0 0.5rem;
+  font-size: 1.3rem;
+  color: var(--vd-text-primary);
+}
+
+.about-sidequest-card p {
+  font-size: 1.04rem;
+  line-height: 1.65;
+  margin-bottom: 0.85rem;
+}
+
+.about-sidequest-card a:not(.vd-btn) {
+  color: var(--vd-color-primary);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.about-sidequest-card a:not(.vd-btn):hover {
+  color: var(--vd-color-primary-hover);
 }
 
 /* =========================================================================

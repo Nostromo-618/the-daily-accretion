@@ -3,7 +3,8 @@ import { computed, onBeforeUnmount, onMounted, ref } from 'vue'
 import { useRoute } from 'vue-router'
 import { getArticle } from '@/data/articles'
 import { SITE } from '@/data/site'
-import { useSeo } from '@/composables/useSeo'
+import { abs, useSeo } from '@/composables/useSeo'
+import { withBase } from '@/utils/withBase'
 
 const route = useRoute()
 const slug = computed(() => String(route.params.slug))
@@ -29,12 +30,28 @@ if (article.value) {
         '@type': 'BlogPosting',
         headline: a.title,
         description: a.description,
-        image: a.image.startsWith('http') ? a.image : `${SITE.url}${a.image}`,
+        image: [abs(a.heroImage ?? a.image)],
         datePublished: a.date,
         dateModified: a.date,
-        author: { '@type': 'Person', name: SITE.author },
-        publisher: { '@type': 'Organization', name: SITE.name },
-        mainEntityOfPage: `${SITE.url}/blog/${a.slug}`,
+        articleSection: a.section,
+        author: {
+          '@type': 'Person',
+          name: SITE.author,
+          url: SITE.url,
+        },
+        publisher: {
+          '@type': 'Organization',
+          name: SITE.name,
+          url: SITE.url,
+          logo: {
+            '@type': 'ImageObject',
+            url: abs(SITE.defaultImage),
+          },
+        },
+        mainEntityOfPage: {
+          '@type': 'WebPage',
+          '@id': abs(`/blog/${a.slug}`),
+        },
       },
     ],
   })
@@ -95,7 +112,7 @@ onBeforeUnmount(() => {
 
         <img
           v-if="article.heroImage"
-          :src="article.heroImage"
+          :src="withBase(article.heroImage)"
           :alt="article.imageAlt"
           class="article-hero-image"
         />
