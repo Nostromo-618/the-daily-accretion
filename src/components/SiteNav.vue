@@ -1,11 +1,42 @@
 <script setup lang="ts">
+import { ref, onMounted, onUnmounted } from 'vue'
 import { useRoute } from 'vue-router'
-import { VdNavbar, VdThemeSwitcher } from '@vanduo-oss/vd3'
+import { VdNavbar, VdThemeSwitcher, VdThemeCustomizer } from '@vanduo-oss/vd3'
 import { NAV, SITE } from '@/data/site'
 
 const route = useRoute()
+const customizer = ref<InstanceType<typeof VdThemeCustomizer>>()
+const triggerBtn = ref<HTMLButtonElement>()
 
 const isActive = (to: string): boolean => route.path === to
+
+const updatePanelPosition = () => {
+  if (!triggerBtn.value) return
+  const panel = document.querySelector('.vd-theme-customizer-panel') as HTMLElement | null
+  if (panel) {
+    const rect = triggerBtn.value.getBoundingClientRect()
+    const top = rect.bottom + 8
+    const right = Math.max(12, window.innerWidth - rect.right)
+    panel.style.setProperty('top', `${top}px`, 'important')
+    panel.style.setProperty('right', `${right}px`, 'important')
+    panel.style.setProperty('left', 'auto', 'important')
+  }
+}
+
+const toggleCustomizer = () => {
+  customizer.value?.toggle()
+  requestAnimationFrame(() => {
+    updatePanelPosition()
+  })
+}
+
+onMounted(() => {
+  window.addEventListener('resize', updatePanelPosition)
+})
+
+onUnmounted(() => {
+  window.removeEventListener('resize', updatePanelPosition)
+})
 </script>
 
 <template>
@@ -31,8 +62,19 @@ const isActive = (to: string): boolean => route.path === to
 
     <template #actions>
       <div class="nav-actions">
+        <button
+          ref="triggerBtn"
+          type="button"
+          class="nav-icon-btn customizer-btn"
+          aria-label="Customize theme"
+          @click="toggleCustomizer"
+        >
+          <i class="ph ph-paint-roller" aria-hidden="true"></i>
+        </button>
         <VdThemeSwitcher align="end" />
+        <VdThemeCustomizer ref="customizer" :show-palette="false" />
       </div>
     </template>
   </VdNavbar>
 </template>
+

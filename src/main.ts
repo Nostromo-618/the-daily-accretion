@@ -27,7 +27,7 @@ export const createApp = ViteSSG(
         PRIMARY_DARK: 'teal',
         NEUTRAL: 'stone',
         RADIUS: '0.25',
-        FONT: 'source-sans',
+        FONT: 'jetbrains-mono',
       },
     })
     app.directive('reveal', reveal)

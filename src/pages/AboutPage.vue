@@ -8,7 +8,7 @@ useSeo({
   description:
     "Learn about The Daily Accretion — why 'Accretion' and what drives this exploration of mind, universe, and everything in between.",
   path: '/about',
-  image: '/images/about.webp',
+  image: '/images/about.jpg',
 })
 </script>
 
@@ -23,7 +23,7 @@ useSeo({
     <section class="section" style="padding-top: 0">
       <div class="container">
         <img
-          :src="withBase('/images/about.webp')"
+          :src="withBase('/images/about.jpg')"
           alt="About The Daily Accretion"
           class="about-image"
           v-reveal
@@ -73,6 +73,11 @@ useSeo({
           </div>
 
           <h4>Thanks for joining me on this journey through space and time.</h4>
+
+          <p class="about-ai-note" v-reveal="200">
+            <i class="ph ph-robot" aria-hidden="true"></i>
+            Texts and images created with AI assistance; all ideas and editorial review are human.
+          </p>
         </div>
       </div>
     </section>

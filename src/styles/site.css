@@ -104,6 +104,73 @@ a {
   display: inline-flex;
   align-items: center;
   gap: 0.35rem;
+  position: relative;
+}
+
+.da-nav .nav-icon-btn,
+.da-nav .vd-theme-switcher-toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.375rem;
+  height: 2.375rem;
+  background: transparent;
+  border: none;
+  color: var(--vd-navbar-link);
+  font-size: 1.25rem;
+  padding: 0;
+  border-radius: var(--vd-radius);
+  cursor: pointer;
+  transition: color 0.2s, background 0.2s, border-color 0.2s;
+}
+
+.da-nav .nav-icon-btn:hover,
+.da-nav .nav-icon-btn:focus-visible,
+.da-nav .vd-theme-switcher-toggle:hover,
+.da-nav .vd-theme-switcher-toggle:focus-visible,
+.da-nav .vd-theme-switcher.is-open .vd-theme-switcher-toggle {
+  color: var(--vd-primary);
+  background: var(--vd-surface-2, rgba(255, 255, 255, 0.08));
+  border: none;
+  outline: none;
+  box-shadow: none;
+}
+
+/* Hide the built-in trigger — we use our own paint-roller button */
+.da-nav .vd-theme-customizer-trigger {
+  display: none;
+}
+
+/* Customizer trigger anchor */
+:root {
+  anchor-scope: --customizer-trigger;
+}
+
+.da-nav .customizer-btn {
+  anchor-name: --customizer-trigger;
+}
+
+/* Anchor the customizer panel directly beneath the paint roller button */
+.vd-theme-customizer-panel,
+body > .vd-theme-customizer-panel {
+  position: fixed !important;
+  left: auto;
+  bottom: auto !important;
+  margin: 0 !important;
+  max-height: calc(100vh - 80px) !important;
+  z-index: 1050 !important;
+  border-radius: var(--vd-radius, 12px) !important;
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.4), 0 0 0 1px var(--vd-border-subtle, rgba(255, 255, 255, 0.1)) !important;
+}
+
+@media (max-width: 480px) {
+  .vd-theme-customizer-panel,
+  body > .vd-theme-customizer-panel {
+    right: 0.5rem !important;
+    left: 0.5rem !important;
+    width: auto !important;
+    max-width: calc(100vw - 1rem) !important;
+  }
 }
 
 /* =========================================================================
@@ -258,7 +325,10 @@ a {
   gap: clamp(1.25rem, 3vw, 2rem);
 }
 
-.post-card {
+.post-card,
+.post-card:hover,
+.post-card:focus,
+.post-card:active {
   position: relative;
   display: flex;
   flex-direction: column;
@@ -268,10 +338,16 @@ a {
   background: var(--vd-bg-secondary);
   border: 1px solid var(--vd-border-color);
   box-shadow: var(--vd-shadow-sm);
+  text-decoration: none !important;
   transition:
     transform 0.28s cubic-bezier(0.22, 1, 0.36, 1),
     box-shadow 0.28s ease,
     border-color 0.28s ease;
+}
+
+.post-card *,
+.post-card:hover * {
+  text-decoration: none !important;
 }
 
 .post-card:hover {
@@ -349,6 +425,8 @@ a {
 
 .post-card:hover .post-card__body h3 {
   color: var(--vd-color-primary);
+  text-decoration: underline !important;
+  text-underline-offset: 3px;
 }
 
 .post-card__excerpt {
@@ -736,6 +814,17 @@ a {
 
 .about-sidequest-card a:not(.vd-btn):hover {
   color: var(--vd-color-primary-hover);
+}
+
+.about-ai-note {
+  margin-top: 2.5rem;
+  padding-top: 1.25rem;
+  border-top: 1px solid var(--vd-border-subtle);
+  font-size: 0.85rem;
+  color: var(--vd-text-muted);
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
 }
 
 /* =========================================================================
