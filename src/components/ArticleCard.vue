@@ -4,6 +4,11 @@ import type { Article } from '@/data/articles'
 import { withBase } from '@/utils/withBase'
 
 defineProps<{ article: Article }>()
+
+const onImgError = (e: Event) => {
+  const img = e.target as HTMLImageElement
+  img.style.display = 'none'
+}
 </script>
 
 <template>
@@ -14,7 +19,13 @@ defineProps<{ article: Article }>()
           {{ article.section === 'blog' ? 'Blog' : 'Random' }}
         </VdBadge>
       </span>
-      <img :src="withBase(article.image)" :alt="article.imageAlt" loading="lazy" decoding="async" />
+      <img
+        :src="withBase(article.image)"
+        :alt="article.imageAlt"
+        loading="lazy"
+        decoding="async"
+        @error="onImgError"
+      />
     </div>
 
     <div class="post-card__body">

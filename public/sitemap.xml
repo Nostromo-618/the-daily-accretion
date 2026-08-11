@@ -49,6 +49,12 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://nostromo-618.github.io/the-daily-accretion/blog/xerox-parc</loc>
+    <lastmod>2026-08-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://nostromo-618.github.io/the-daily-accretion/blog/year-2025-is-over-finally</loc>
     <lastmod>2026-01-22</lastmod>
     <changefreq>monthly</changefreq>

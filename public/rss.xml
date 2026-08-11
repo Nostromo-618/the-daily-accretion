@@ -7,6 +7,13 @@
     <language>en-us</language>
     <atom:link href="https://nostromo-618.github.io/the-daily-accretion/rss.xml" rel="self" type="application/rss+xml"/>
     <item>
+      <title><![CDATA[Xerox PARC: The Lab That Invented the Future]]></title>
+      <link>https://nostromo-618.github.io/the-daily-accretion/blog/xerox-parc</link>
+      <guid isPermaLink="true">https://nostromo-618.github.io/the-daily-accretion/blog/xerox-parc</guid>
+      <pubDate>Tue, 11 Aug 2026 00:00:00 GMT</pubDate>
+      <description><![CDATA[A narrative deep-dive into Xerox PARC: the Alto, Ethernet, the GUI, Smalltalk, ubiquitous computing, the geniuses who built it all, and the great paradox of why Xerox failed to capitalize on its own inventions.]]></description>
+    </item>
+    <item>
       <title><![CDATA[Scent of a Tango]]></title>
       <link>https://nostromo-618.github.io/the-daily-accretion/blog/scent-of-a-tango</link>
       <guid isPermaLink="true">https://nostromo-618.github.io/the-daily-accretion/blog/scent-of-a-tango</guid>

@@ -87,6 +87,10 @@ onBeforeUnmount(() => {
   window.removeEventListener('scroll', onScroll)
   window.removeEventListener('resize', onScroll)
 })
+const onHeroError = (e: Event) => {
+  const img = e.target as HTMLImageElement
+  img.style.display = 'none'
+}
 </script>
 
 <template>
@@ -115,6 +119,7 @@ onBeforeUnmount(() => {
           :src="withBase(article.heroImage)"
           :alt="article.imageAlt"
           class="article-hero-image"
+          @error="onHeroError"
         />
 
         <div

@@ -158,7 +158,142 @@ export const articles: Article[] = [
       <p>Anthropic's Claude Opus 4 System Card PDF, where the "spiritual bliss" attractor state was first mentioned: <a href="https://www-cdn.anthropic.com/4263b940cabb546aa0e3283f35b686f4f3b2ff47.pdf" target="_blank" rel="noopener noreferrer">https://www-cdn.anthropic.com/4263b940cabb546aa0e3283f35b686f4f3b2ff47.pdf</a></p>
     `,
   },
-  {
+
+
+   { slug: 'xerox-parc',
+    title: 'Xerox PARC: The Lab That Invented the Future',
+    section: 'blog',
+    date: '2026-08-11',
+    dateLabel: 'August 11, 2026',
+    readTime: '25 min read',
+    excerpt: 'Inside the lab that gave us the GUI, Ethernet, laser printing, and OOP — and why Xerox fumbled every one of them.',
+    description: 'A narrative deep-dive into Xerox PARC: the Alto, Ethernet, the GUI, Smalltalk, ubiquitous computing, the geniuses who built it all, and the great paradox of why Xerox failed to capitalize on its own inventions.',
+    image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/5/56/Xerox_PARC_02.jpg/1280px-Xerox_PARC_02.jpg',
+    heroImage: 'https://upload.wikimedia.org/wikipedia/commons/thumb/5/56/Xerox_PARC_02.jpg/1280px-Xerox_PARC_02.jpg',
+    imageAlt: 'Aerial view of Xerox PARC campus in 2020',
+    bodyHtml: `
+      <h2>The Lab That Invented the Future</h2>
+      <p>Picture this: it's 1973. The hottest technology company on Earth makes its money selling copiers — glorified cameras bolted to boxes of paper. And yet, three thousand miles from its Rochester headquarters, in a sun-drenched office park in Palo Alto, a small band of researchers is quietly building the future. Not <em>predicting</em> it. Actually <em>building</em> it. A personal computer with a graphical screen and a mouse. A network that connects them all together. A way of programming that treats code like living, communicating objects. A printer that uses lasers. A vision of computing so total that even the idea of carrying a tiny computer in your pocket — the smartphone — was already being sketched onto whiteboards.</p>
+      <p>All of this happened at one place: <strong>Xerox PARC</strong>. And all of this happened before most of the world had even seen a microcomputer.</p>
+      <p>This is not a Wikipedia summary. This is the story of how a photocopier company accidentally created the modern world — and then, in one of history's most spectacular displays of corporate myopia, let it all slip through its fingers.</p>
+
+      <h2>How It Began: Xerox's Unlikely Gamble</h2>
+      <p>In 1969, Xerox was a money-printing machine. Its patent on xerography — the dry-copying process invented by Chester Carlson — had made it one of the most profitable companies in America. But Xerox's chief scientist, <strong>Jacob E. "Jack" Goldman</strong>, saw a problem on the horizon: a future where paper might not be the dominant medium of information. He convinced the board that Xerox needed a research lab, not to improve copiers, but to explore what he called "the architecture of information."</p>
+      <p>The board, flush with cash and perhaps seduced by Goldman's Harvard-honed persuasiveness, gave him a blank check. The only condition? Locate the lab far from Rochester — far enough that corporate bureaucracy wouldn't strangle it in the crib.</p>
+      <p>Goldman recruited <strong>George Pake</strong>, a physicist and provost at Washington University, as the lab's first director. In July 1970, Xerox PARC — the Palo Alto Research Center — opened its doors in the Stanford Research Park, a cluster of low-slung buildings that sat at the intersection of academia and the nascent Silicon Valley. Pake's first brilliant move was hiring <strong>Bob Taylor</strong>, a psychologist-turned-computer visionary who had been funding the ARPANET at the Department of Defense, to lead the Computer Science Laboratory (CSL).</p>
+      <p>Taylor had a simple hiring philosophy: find the absolute best people in the world and give them the freedom to be great. He raided the Stanford Artificial Intelligence Lab and SRI's Augmentation Research Center — the same SRI where Douglas Engelbart had just demonstrated the mouse, hypertext, and video conferencing in the legendary "Mother of All Demos." The people Taylor hired didn't just have résumés. They had obsessions.</p>
+      <p>By 1972, PARC's CSL was the densest concentration of computer science talent on the planet. And they were about to change everything.</p>
+
+      <h2>The Alto: A Computer Five Decades Ahead of Its Time</h2>
+      <p>In 1973, PARC unveiled the <strong>Xerox Alto</strong>. If you've never seen one, imagine a beige box with a portrait-oriented black-and-white display, a keyboard, and a three-button mouse. In an era when computers filled entire rooms and communicated through punch cards and blinking lights, the Alto looked like it had fallen through a time portal from 1990.</p>
+      <p>The Alto was the first machine to combine a <strong>bitmapped graphical display</strong> (606 × 808 pixels — far sharper than any consumer screen of the time), a <strong>mouse-driven interface</strong>, and a <strong>desktop metaphor</strong>. You didn't type arcane commands. You pointed at things. You moved windows around. You opened documents by clicking on icons that looked like documents. The concept of "files and folders" — the mental model that billions of people now navigate daily — was born right here.</p>
+      <p>But the Alto wasn't just a pretty face. Each machine ran a <strong>WYSIWYG</strong> editor called <strong>Bravo</strong>, written by Charles Simonyi and Butler Lampson. "What You See Is What You Get" — a phrase we don't even think about anymore — was a revolutionary concept. Prior to Bravo, formatting a document meant inserting cryptic markup codes and waiting for a printout to see if the result looked right. Bravo showed you the formatted text, in multiple fonts, right on screen. It made document creation visual and immediate. Simonyi would later take these ideas to Microsoft and build Word.</p>
+      <p>Ethernet connected every Alto on the network. You could print to the shared laser printer. You could send documents to colleagues. You could play <em>Maze War</em>, one of the first networked multiplayer games. The Alto wasn't a prototype of a computer — it was a prototype of a fully networked <em>office of the future</em>, built in 1973.</p>
+      <p>The estimated cost in today's dollars? About $40,000 per machine. PARC built roughly 2,000 of them and used them internally. Few people outside PARC ever saw one. But the people who did would never see computing the same way again.</p>
+
+      <figure>
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/Xerox_Alto_mit_Rechner.JPG/1280px-Xerox_Alto_mit_Rechner.JPG" alt="Xerox Alto workstation" loading="lazy" onerror="this.style.display='none'">
+        <figcaption>The Xerox Alto (1973) — the first personal computer with a bitmapped graphical display, a mouse, and Ethernet networking.</figcaption>
+      </figure>
+
+      <h2>The Inventions That Shaped Modern Computing</h2>
+      <p>The Alto was the hardware. But the ideas incubating at PARC went far deeper. Let's walk through each one — because each, on its own, would have been a career-defining achievement. PARC produced them all in a single decade.</p>
+
+      <h3>Ethernet</h3>
+      <p>In 1973, <strong>Bob Metcalfe</strong> — a young, confident MIT and Harvard grad — sat down and typed a memo. He was trying to solve a simple problem: how do you connect all these Altos so they can share files and print to the same laser printer? The telephone network wasn't built for this. Neither were any of the existing proprietary networking schemes.</p>
+      <p>Metcalfe's idea was both elegant and radical: a shared coaxial cable that every computer taps into. When two machines try to talk at once, they detect the collision, wait a random interval, and retry. He called it <strong>Ethernet</strong> — a nod to the discredited 19th-century concept of "luminiferous ether," the invisible medium that was once thought to carry light through space. The name was a sly joke: Metcalfe was saying, essentially, "we don't know exactly how this works either, but it does."</p>
+      <p>Working with <strong>David Boggs</strong>, Metcalfe got the first Ethernet running at <strong>2.94 megabits per second</strong> — blistering speed for 1973. They integrated it with the <strong>PARC Universal Packet (PUP)</strong> architecture, a protocol suite that looked astonishingly like what we now call TCP/IP. When Metcalfe founded 3Com in 1979, Ethernet began its march toward becoming the universal standard for local networking. Today, it's the literal backbone of the internet — the wire (or fiber) that connects nearly every server, every office, and every data center on Earth.</p>
+      <p>Metcalfe would later win the Turing Award. The memo that started it all? Just a few pages long.</p>
+
+      <h3>The Graphical User Interface</h3>
+      <p>If there's one image permanently burned into computing history, it's the GUI. Windows, icons, menus, and a pointer — <strong>WIMP</strong>, as researchers came to call it. All four were first integrated at PARC.</p>
+      <p>Alan Kay's <strong>Smalltalk</strong> environment introduced overlapping windows — the idea that you could have multiple "documents" visible at once, each in its own resizable frame, with the active one in front. This seems obvious now. In 1974, it was disorienting. People literally didn't understand that windows could "stack" on top of each other. PARC researchers had to invent the visual cues — shadows, borders, title bars — that make overlapping windows feel natural.</p>
+      <p>Smalltalk also pioneered the <strong>Model-View-Controller (MVC)</strong> architecture, a design pattern that separated the data (model) from how it looked (view) and how users interacted with it (controller). Nearly every web framework you use today — Rails, Django, Laravel, Angular — descends from this architecture conceived at PARC.</p>
+      <p><strong>Larry Tesler</strong>, another PARC researcher, was so frustrated with the "modes" that plagued early software — where pressing a key might do one thing in one mode and something entirely different in another — that he championed modeless editing. He coined the commands <em>cut</em>, <em>copy</em>, and <em>paste</em>. His license plate read "NO MODES."</p>
+
+      <h3>Laser Printing</h3>
+      <p><strong>Gary Starkweather</strong> was a problem employee — at least, that's what his managers in Xerox's Rochester lab thought. He kept insisting that lasers could be used to write images onto xerographic drums, enabling printers far faster and sharper than anything possible with conventional mechanisms. His bosses told him to stop wasting time.</p>
+      <p>So Starkweather transferred to PARC, where "stop wasting time on crazy ideas" was not in the vocabulary. There, he built the first working laser printer in 1971. By 1977, PARC's research had become the <strong>Xerox 9700</strong>, the first commercial laser printer. It could print 120 pages per minute at 300 dots per inch — absurd numbers for the era. This single invention generated an estimated <strong>$17 billion</strong> in revenue for Xerox over the following decades. It was, by far, PARC's most lucrative contribution to its parent company. Starkweather never had to apologize for his "crazy" ideas.</p>
+
+      <h3>Object-Oriented Programming</h3>
+      <p><strong>Alan Kay</strong> didn't just want to build a programming language. He wanted to build a medium for thought — a way for children and adults alike to model the world as interacting objects, each with its own behavior and its own internal memory. He called it <strong>Smalltalk</strong>.</p>
+      <p>Smalltalk introduced class-based inheritance, message passing, and a fully integrated development environment — the first modern IDE — complete with a browser for inspecting live objects, a debugger, and a code editor. Everything ran inside the Smalltalk "image," a persistent universe where shutting down and restarting meant resuming exactly where you left off, down to the last open window. The Dynabook, Kay's broader vision, was a portable computer "for children of all ages" — a tablet before tablets existed, a laptop before laptops existed, a vision he described in 1972 that would take four decades to fully materialize.</p>
+      <p>Later PARC work on the <strong>Self</strong> language pushed object orientation even further: prototype-based programming, where objects inherit directly from other objects without the intermediary of classes. Self directly inspired JavaScript — which now runs on literally every web browser on Earth.</p>
+
+      <h3>Ubiquitous Computing</h3>
+      <p>In the late 1980s, <strong>Mark Weiser</strong> — PARC's chief technologist — articulated a vision that was as radical as it was quiet. He believed the most profound technologies are those that disappear. They weave themselves into the fabric of everyday life until they are indistinguishable from it. Writing, he noted, is ubiquitous. You don't think about "using writing." You just use it. Computing, Weiser argued, should be the same.</p>
+      <p>Weiser's team built three prototype devices to explore this vision: the <strong>PARC Tab</strong> (a palm-sized device, essentially a smartphone), the <strong>PARC Pad</strong> (a tablet-sized device), and the PARC Board (a wall-sized display). The Tab alone — developed in the early 1990s, a full 15 years before the iPhone — had a touchscreen, pen input, and location awareness. It communicated wirelessly using infrared. It ran applications that tracked meeting locations, displayed context-sensitive notes, and responded to the user's physical environment.</p>
+      <p>Weiser's 1991 paper "The Computer for the 21st Century" is arguably the most prescient document in the history of computer science. Everything it described — smartphones, tablets, smart homes, ambient computing — has come to pass. Weiser wouldn't live to see it. He died of cancer in 1999 at age 46. But his vision of computing dissolving into the world around us remains the closest thing our industry has to a North Star.</p>
+
+      <figure>
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/56/PARC_Tab.png/1280px-PARC_Tab.png" alt="PARC Tab prototype" loading="lazy" onerror="this.style.display='none'">
+        <figcaption>The PARC Tab (early 1990s) — a palm-sized prototype for ubiquitous computing that anticipated smartphones by 15 years.</figcaption>
+      </figure>
+
+      <h2>The Genius Factory: PARC's Remarkable People</h2>
+      <p>PARC's alumni roster reads like a who's-who of computing. Four researchers — <strong>Butler Lampson</strong>, <strong>Alan Kay</strong>, <strong>Charles P. Thacker</strong>, and <strong>Robert Metcalfe</strong> — received the <strong>Turing Award</strong>, computing's Nobel Prize. In 2004, the four of them, along with colleagues, were awarded the <strong>Charles Stark Draper Prize</strong> — the "Nobel Prize of Engineering" — for their work on the Alto, "the first networked personal computer."</p>
+      <p>Then there are the names you should know even if you don't. <strong>Adele Goldberg</strong> managed the System Concepts Laboratory and co-developed Smalltalk; without her, the language doesn't exist, and without Smalltalk, the GUI doesn't exist. <strong>Dan Ingalls</strong> implemented the majority of Smalltalk's virtual machine — a feat of engineering elegance that influenced every VM that followed, from Java's to JavaScript's. <strong>Larry Tesler</strong>, the anti-mode crusader who invented cut/copy/paste, later joined Apple as chief scientist. <strong>Lynn Conway</strong>, who co-authored the landmark textbook on VLSI chip design while at PARC, went on to become one of the most important transgender advocates in engineering. <strong>David Boggs</strong> co-invented Ethernet with Metcalfe and later worked at DEC. <strong>Chuck Geschke</strong> and <strong>John Warnock</strong> left PARC to found Adobe.</p>
+      <p>Bob Taylor's hiring strategy — "you don't hire the best people and then tell them what to do; you hire the best people and they tell you what to do" — created an environment where every conversation had the potential to reshape an industry. Meetings were Thursday afternoons, beanbag chairs were standard issue, and the intellectual atmosphere was so intense that researchers would regularly work through the night not because they had to, but because they couldn't stop.</p>
+
+      <h2>The Great Paradox: Fumbling the Future</h2>
+      <p>Here's the question that has haunted business schools for forty years: <strong>how did a company that invented the personal computer, the GUI, Ethernet, laser printing, and object-oriented programming fail to dominate any of those industries?</strong></p>
+      <p>The short answer is tragic in its simplicity. Xerox was a copier company. Its executives, its sales force, its entire incentive structure, was built around one thing: moving boxes of paper-copying machines. The executives who visited PARC from Rochester didn't see the future of computing. They saw expensive toys built by people who didn't wear ties. One famous internal report from 1975 concluded that the Alto was "an interesting experiment, but not a product."</p>
+      <p>Then came December 1979. <strong>Steve Jobs</strong>, then 24 years old, had heard rumors about the incredible things happening at PARC. He negotiated a deal: Apple would let Xerox invest $1 million in Apple's pre-IPO stock in exchange for a technology demonstration. PARC's researchers were horrified — they were showing their crown jewels to a competitor for what amounted to pocket change. But Xerox management overruled them.</p>
+      <p>Jobs saw the Alto for about an hour. He later described the experience in a Playboy interview:</p>
+      <blockquote><p>"They showed me three things. I saw the first one — a graphical user interface — and I was so blinded by it that I didn't even really see the other two. It was the best thing I'd ever seen in my life. Within ten minutes, it was obvious to me that all computers would work this way someday."</p></blockquote>
+      <p>Jobs went back to Cupertino and redirected the entire Lisa — and later Macintosh — project toward building what he'd just seen. The rest of the story is well-known: Apple's Macintosh in 1984 introduced the GUI to millions. Microsoft followed with Windows. The world moved on, and Xerox was left standing in the copier aisle.</p>
+      <p>Xerox tried to fight back. The <strong>Xerox Star 8010</strong>, released in 1981, was a commercialized version of the Alto's ideas: a GUI desktop with icons, folders, a mouse, Ethernet, and a laser printer — all in one integrated system. It was beautiful. It was revolutionary. It was also <strong>\$16,595</strong> — about \$55,000 in today's dollars — and required special software that made it incompatible with everything else on the market. Xerox sold roughly 25,000 units. Apple sold millions of Macs.</p>
+      <p><strong>Bill Gates</strong> later captured the paradox perfectly: "Xerox had a research lab that was the envy of the world. They invented everything, but they never really shipped anything. It's really about moving from ideas to execution." Gates, of course, had visited PARC too. Windows didn't emerge from a vacuum.</p>
+      <p>It's worth noting what Xerox <em>did</em> successfully commercialize: the laser printer generated an estimated \$17 billion in revenue. Xerox also pioneered liquid-crystal display technology and optical disc storage, both of which became profitable product lines. The company wasn't <em>completely</em> inept at execution. It just couldn't extend that execution to the market that mattered most.</p>
+      <p>The spinoff story is equally revealing. PARC alumni founded or joined an extraordinary number of companies: Adobe (Geschke and Warnock), 3Com (Metcalfe), SynOptics, Metaphor Computer Systems, Grid Systems, and many more. The knowledge diffused outward like ripples from a stone dropped in a pond. Every major technology company in Silicon Valley — Apple, Microsoft, Adobe, Cisco, Sun — was shaped in some way by people who had either worked at PARC or been inspired by what they saw there.</p>
+
+      <h2>The New Chapter: From Xerox PARC to SRI Future Concepts</h2>
+      <p>In 2002, Xerox spun PARC off as an independent company — <strong>PARC, Inc.</strong> — reflecting the reality that its research portfolio had long since diverged from Xerox's core copier business. For two decades, it operated as an independent R&D firm, taking on government and corporate contracts in artificial intelligence, clean energy, printing electronics, and biomedical technology.</p>
+      <p>In April 2023, Xerox donated PARC to <strong>SRI International</strong> — the same SRI where Engelbart had demonstrated the mouse and hypertext in 1968, and where many of PARC's founding researchers had been recruited from. It was a homecoming. In 2024, the lab was reorganized as the <strong>Future Concepts Division</strong> of SRI, focusing on AI, quantum computing, chemical sensing, and advanced materials. The name "PARC" survives as a powerful brand, but the mission has evolved. The era of a single company funding a playground for geniuses with no immediate profit motive — that era is gone.</p>
+
+      <figure>
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/52/Parcentrance.jpg/1280px-Parcentrance.jpg" alt="PARC entrance" loading="lazy" onerror="this.style.display='none'">
+        <figcaption>The entrance to Xerox PARC in Palo Alto, California.</figcaption>
+      </figure>
+
+      <h2>Photo Gallery</h2>
+
+      <figure>
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5f/Xerox_PARC_in_1977.jpg/1280px-Xerox_PARC_in_1977.jpg" alt="Xerox PARC in 1977" loading="lazy" onerror="this.style.display='none'">
+        <figcaption>Xerox PARC headquarters, 1977 — at the peak of its creative output.</figcaption>
+      </figure>
+
+      <figure>
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/56/Xerox_PARC_02.jpg/1280px-Xerox_PARC_02.jpg" alt="Aerial view of Xerox PARC" loading="lazy" onerror="this.style.display='none'">
+        <figcaption>Aerial view of the Xerox PARC campus, 2020. Photo: Christopher Michel, <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank" rel="noopener noreferrer">CC BY-SA 4.0</a>, via Wikimedia Commons.</figcaption>
+      </figure>
+
+      <h2>Why PARC Still Matters</h2>
+      <p>We live in a world that PARC imagined. Every time you click a file icon, every time you drag a window, every time you copy and paste, every time you connect to Wi-Fi, every time you pick up your smartphone — you're touching technology that traces back, through a chain of influences and imitations, to that little cluster of buildings on Coyote Hill Road in Palo Alto.</p>
+      <p>But PARC's real lesson isn't about technology. It's about <strong>the gap between invention and execution</strong>. PARC proved that having the best ideas is necessary but not sufficient. The idea has to find its way to market. The executive suite has to understand what the researchers are building. The company's culture has to be porous enough to let the future in.</p>
+      <p>Xerox failed that test. The question for today's technology giants — for Google's X lab, for Meta's Reality Labs, for OpenAI and Anthropic and DeepMind — is whether they'll pass it. Every one of those organizations operates with a level of freedom and funding that echoes PARC. Every one of them is producing ideas that could define the next fifty years. And every one of them faces the same pressure that PARC faced: the quarterly earnings call, the impatient shareholder, the executive who visits from headquarters and sees expensive toys instead of the future.</p>
+      <p>There's another lesson, too — a quieter one. PARC worked because Bob Taylor gave geniuses the freedom to be geniuses. He didn't manage them with Gantt charts and OKRs. He put them in a room and let them talk. The beanbag chairs and the Thursday-afternoon meetings were not affectations. They were the operating system of a culture that trusted researchers to follow their curiosity wherever it led.</p>
+      <p>Can that culture be replicated today? In an era of remote work, monetization pressure, and quarterly earnings anxiety, it's an open question. But the evidence is clear: give brilliant people time, space, and the freedom to fail, and they will occasionally produce something that changes the world. PARC was an experiment in that proposition. The Alto, Ethernet, Smalltalk, and the laser printer were the results.</p>
+      <p>Not bad for a photocopier company.</p>
+
+      <h2>Sources</h2>
+      <ol>
+        <li><a href="https://en.wikipedia.org/wiki/PARC_(company)" target="_blank" rel="noopener noreferrer">Wikipedia — PARC (company)</a></li>
+        <li>Hiltzik, Michael. <em>Dealers of Lightning: Xerox PARC and the Dawn of the Computer Age</em>. HarperBusiness, 1999.</li>
+        <li><a href="https://www.forbes.com/sites/tendayi/viki/2019/08/13/as-xerox-parc-turns-47-the-lesson-learned-that-business-models-matter/" target="_blank" rel="noopener noreferrer">Viki, Tendayi. "As Xerox PARC Turns 47, The Lesson Learned Is That Business Models Matter." Forbes, 2019.</a></li>
+        <li><a href="https://www.computerworld.com/article/254001/xerox-parc-turns-40-marking-four-decades-of-tech-innovations.html" target="_blank" rel="noopener noreferrer">Computerworld — Xerox PARC Turns 40</a></li>
+        <li><a href="https://www.nytimes.com/2011/12/22/business/jacob-e-goldman-founder-of-xerox-lab-dies-at-90.html" target="_blank" rel="noopener noreferrer">Markoff, John. "Jacob Goldman, Founder of Xerox Lab, Dies at 90." The New York Times, 2011.</a></li>
+        <li>Weiser, Mark. "The Computer for the 21st Century." <em>Scientific American</em>, September 1991.</li>
+        <li><a href="https://spectrum.ieee.org/xerox-parc" target="_blank" rel="noopener noreferrer">Perry, Tekla S. "The 40-Year March of Ethernet." IEEE Spectrum, 2013.</a></li>
+        <li>Metcalfe, Robert M. and David R. Boggs. "Ethernet: Distributed Packet Switching for Local Computer Networks." <em>Communications of the ACM</em>, July 1976.</li>
+        <li>Kay, Alan. "The Early History of Smalltalk." <em>ACM SIGPLAN Notices</em>, March 1993.</li>
+        <li><a href="https://sri.com/research/future-concepts-division/" target="_blank" rel="noopener noreferrer">SRI International — Future Concepts Division (formerly PARC)</a></li>
+        <li>Jobs, Steve. Interview with David Sheff. <em>Playboy</em>, February 1985.</li>
+        <li><a href="https://www.draperprize.org/laureates" target="_blank" rel="noopener noreferrer">National Academy of Engineering — Charles Stark Draper Prize for Engineering, 2004.</a></li>
+      </ol>
+    `,
+  },
+   {
     slug: 'year-2025-is-over-finally',
     title: 'Year 2025 is over. Finally.',
     section: 'random',

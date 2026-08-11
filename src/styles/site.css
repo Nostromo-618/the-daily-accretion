@@ -610,6 +610,18 @@ body > .vd-theme-customizer-panel {
   margin: 0 0 1.65rem;
 }
 
+.article-content figure {
+  margin: 2rem 0;
+}
+
+.article-content figure img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  border-radius: var(--vd-border-radius-lg);
+  box-shadow: var(--vd-shadow-md);
+}
+
 .article-content a {
   color: var(--vd-color-primary);
   text-decoration: underline;
