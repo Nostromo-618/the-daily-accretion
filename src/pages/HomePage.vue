@@ -13,6 +13,19 @@ useSeo({
   jsonLd: [
     {
       '@context': 'https://schema.org',
+      '@type': 'WebSite',
+      name: SITE.name,
+      alternateName: 'The Daily Accretion',
+      description: SITE.description,
+      url: SITE.url,
+      publisher: {
+        '@type': 'Organization',
+        name: SITE.name,
+        url: SITE.url,
+      },
+    },
+    {
+      '@context': 'https://schema.org',
       '@type': 'Blog',
       name: SITE.name,
       description: SITE.description,

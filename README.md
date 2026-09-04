@@ -6,7 +6,7 @@ A personal blog built with **Vue 3** and [`@vanduo-oss/vd3`](https://www.npmjs.c
 
 ## Live Site
 
-**https://nostromo-618.github.io/the-daily-accretion/**
+**https://accretion.blog**
 
 ## Tech Stack
 

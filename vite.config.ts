@@ -3,8 +3,8 @@ import vue from '@vitejs/plugin-vue'
 import { fileURLToPath, URL } from 'node:url'
 import { writeFileSync, existsSync } from 'node:fs'
 import { join } from 'node:path'
-import { articles } from './src/data/articles'
-import { SITE } from './src/data/site'
+import { articles } from './src/data/articles.ts'
+import { SITE } from './src/data/site.ts'
 
 // Every route we want pre-rendered to static HTML.
 const ssgRoutes = [
@@ -17,12 +17,15 @@ const ssgRoutes = [
 
 function generateSeoFiles() {
   const siteUrl = SITE.url.endsWith('/') ? SITE.url.slice(0, -1) : SITE.url
+  const sortedArticles = [...articles].sort((a, b) => b.date.localeCompare(a.date))
+  const latestDate = sortedArticles[0]?.date || '2026-09-04'
+  const latestRandomDate = sortedArticles.find((a) => a.section === 'random')?.date || '2026-02-01'
 
   // 1. Generate Sitemap XML
   const sitemapUrls = [
-    { loc: `${siteUrl}/`, lastmod: '2026-02-01', changefreq: 'weekly', priority: '1.0' },
-    { loc: `${siteUrl}/blog`, lastmod: '2026-02-01', changefreq: 'weekly', priority: '0.9' },
-    { loc: `${siteUrl}/random`, lastmod: '2026-02-01', changefreq: 'weekly', priority: '0.9' },
+    { loc: `${siteUrl}/`, lastmod: latestDate, changefreq: 'daily', priority: '1.0' },
+    { loc: `${siteUrl}/blog`, lastmod: latestDate, changefreq: 'weekly', priority: '0.9' },
+    { loc: `${siteUrl}/random`, lastmod: latestRandomDate, changefreq: 'weekly', priority: '0.8' },
     { loc: `${siteUrl}/about`, lastmod: '2026-02-01', changefreq: 'monthly', priority: '0.7' },
     ...articles.map((a) => ({
       loc: `${siteUrl}/blog/${a.slug}`,
@@ -47,7 +50,6 @@ ${sitemapUrls
 </urlset>`
 
   // 2. Generate RSS Feed XML
-  const sortedArticles = [...articles].sort((a, b) => b.date.localeCompare(a.date))
   const rssItems = sortedArticles.map((a) => {
     const pubDate = new Date(a.date).toUTCString()
     return `    <item>
@@ -85,7 +87,7 @@ ${rssItems.join('\n')}
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  base: '/the-daily-accretion/',
+  base: process.env.BASE_URL || '/',
   plugins: [vue()],
   resolve: {
     alias: {

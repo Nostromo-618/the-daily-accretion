@@ -30,9 +30,12 @@ if (article.value) {
     title: a.title,
     description: a.description,
     path: `/blog/${a.slug}`,
-    image: a.image,
+    image: a.heroImage ?? a.image,
+    imageAlt: a.title,
     type: 'article',
     publishedTime: a.date,
+    modifiedTime: a.date,
+    section: a.section,
     jsonLd: [
       {
         '@context': 'https://schema.org',
@@ -61,6 +64,30 @@ if (article.value) {
           '@type': 'WebPage',
           '@id': abs(`/blog/${a.slug}`),
         },
+      },
+      {
+        '@context': 'https://schema.org',
+        '@type': 'BreadcrumbList',
+        itemListElement: [
+          {
+            '@type': 'ListItem',
+            position: 1,
+            name: 'Home',
+            item: abs('/'),
+          },
+          {
+            '@type': 'ListItem',
+            position: 2,
+            name: a.section === 'blog' ? 'Blog' : 'Random',
+            item: abs(a.section === 'blog' ? '/blog' : '/random'),
+          },
+          {
+            '@type': 'ListItem',
+            position: 3,
+            name: a.title,
+            item: abs(`/blog/${a.slug}`),
+          },
+        ],
       },
     ],
   })

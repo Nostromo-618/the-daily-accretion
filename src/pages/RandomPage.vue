@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import ArticleCard from '@/components/ArticleCard.vue'
 import { bySection } from '@/data/articles'
-import { useSeo } from '@/composables/useSeo'
+import { useSeo, abs } from '@/composables/useSeo'
 
 const posts = bySection('random')
 
@@ -10,6 +10,16 @@ useSeo({
   description:
     "Short random thoughts, asides, and musings that don't fit the main blog — quick sparks and reflections.",
   path: '/random',
+  jsonLd: [
+    {
+      '@context': 'https://schema.org',
+      '@type': 'BreadcrumbList',
+      itemListElement: [
+        { '@type': 'ListItem', position: 1, name: 'Home', item: abs('/') },
+        { '@type': 'ListItem', position: 2, name: 'Random', item: abs('/random') },
+      ],
+    },
+  ],
 })
 </script>
 

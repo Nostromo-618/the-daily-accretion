@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { VdBadge } from '@vanduo-oss/vd3'
-import { useSeo } from '@/composables/useSeo'
+import { useSeo, abs } from '@/composables/useSeo'
 import { withBase } from '@/utils/withBase'
 
 useSeo({
@@ -9,6 +9,16 @@ useSeo({
     "Learn about The Daily Accretion — why 'Accretion' and what drives this exploration of mind, universe, and everything in between.",
   path: '/about',
   image: '/images/about.jpg',
+  jsonLd: [
+    {
+      '@context': 'https://schema.org',
+      '@type': 'BreadcrumbList',
+      itemListElement: [
+        { '@type': 'ListItem', position: 1, name: 'Home', item: abs('/') },
+        { '@type': 'ListItem', position: 2, name: 'About', item: abs('/about') },
+      ],
+    },
+  ],
 })
 </script>
 

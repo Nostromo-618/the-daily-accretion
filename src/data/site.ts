@@ -4,7 +4,7 @@ export const SITE = {
   tagline: 'Exploring the mind, universe, and everything in between',
   description:
     'Exploring the mind, universe, and everything in between. A blog about AI, consciousness, space, and the curious corners of existence.',
-  url: 'https://nostromo-618.github.io/the-daily-accretion',
+  url: 'https://accretion.blog',
   author: 'The Daily Accretion',
   locale: 'en_US',
   twitter: 'summary_large_image',

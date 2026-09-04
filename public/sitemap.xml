@@ -1,67 +1,67 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://nostromo-618.github.io/the-daily-accretion/</loc>
-    <lastmod>2026-02-01</lastmod>
-    <changefreq>weekly</changefreq>
+    <loc>https://accretion.blog/</loc>
+    <lastmod>2026-09-04</lastmod>
+    <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://nostromo-618.github.io/the-daily-accretion/blog</loc>
-    <lastmod>2026-02-01</lastmod>
+    <loc>https://accretion.blog/blog</loc>
+    <lastmod>2026-09-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://nostromo-618.github.io/the-daily-accretion/random</loc>
+    <loc>https://accretion.blog/random</loc>
     <lastmod>2026-02-01</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
+    <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://nostromo-618.github.io/the-daily-accretion/about</loc>
+    <loc>https://accretion.blog/about</loc>
     <lastmod>2026-02-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://nostromo-618.github.io/the-daily-accretion/blog/the-sound-of-chaos</loc>
+    <loc>https://accretion.blog/blog/the-sound-of-chaos</loc>
     <lastmod>2026-09-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://nostromo-618.github.io/the-daily-accretion/blog/scent-of-a-tango</loc>
+    <loc>https://accretion.blog/blog/scent-of-a-tango</loc>
     <lastmod>2026-02-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://nostromo-618.github.io/the-daily-accretion/blog/hania-rani-concert</loc>
+    <loc>https://accretion.blog/blog/hania-rani-concert</loc>
     <lastmod>2026-01-31</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://nostromo-618.github.io/the-daily-accretion/blog/feed-your-head</loc>
+    <loc>https://accretion.blog/blog/feed-your-head</loc>
     <lastmod>2026-01-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://nostromo-618.github.io/the-daily-accretion/blog/ai-bliss</loc>
+    <loc>https://accretion.blog/blog/ai-bliss</loc>
     <lastmod>2026-01-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://nostromo-618.github.io/the-daily-accretion/blog/xerox-parc</loc>
+    <loc>https://accretion.blog/blog/xerox-parc</loc>
     <lastmod>2026-08-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://nostromo-618.github.io/the-daily-accretion/blog/year-2025-is-over-finally</loc>
+    <loc>https://accretion.blog/blog/year-2025-is-over-finally</loc>
     <lastmod>2026-01-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>

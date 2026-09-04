@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import ArticleCard from '@/components/ArticleCard.vue'
 import { bySection } from '@/data/articles'
-import { useSeo } from '@/composables/useSeo'
+import { useSeo, abs } from '@/composables/useSeo'
 
 const posts = bySection('blog')
 
@@ -10,6 +10,16 @@ useSeo({
   description:
     'Latest articles from The Daily Accretion. Exploring AI, consciousness, space, and the curious corners of existence.',
   path: '/blog',
+  jsonLd: [
+    {
+      '@context': 'https://schema.org',
+      '@type': 'BreadcrumbList',
+      itemListElement: [
+        { '@type': 'ListItem', position: 1, name: 'Home', item: abs('/') },
+        { '@type': 'ListItem', position: 2, name: 'Blog', item: abs('/blog') },
+      ],
+    },
+  ],
 })
 </script>
 

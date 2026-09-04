@@ -3,4 +3,4 @@ User-agent: *
 Allow: /
 
 # Sitemap
-Sitemap: https://nostromo-618.github.io/the-daily-accretion/sitemap.xml
+Sitemap: https://accretion.blog/sitemap.xml

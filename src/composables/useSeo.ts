@@ -8,8 +8,13 @@ export interface SeoInput {
   path?: string
   /** Root-relative or absolute image URL. */
   image?: string
+  /** Image alternative text for accessibility and social cards. */
+  imageAlt?: string
   type?: 'website' | 'article'
   publishedTime?: string
+  modifiedTime?: string
+  section?: string
+  tags?: string[]
   /** Defaults to `index, follow`. Pass `noindex, follow` for error pages. */
   robots?: string
   /** Extra JSON-LD structured-data objects. */
@@ -41,6 +46,7 @@ export function useSeo(input: SeoInput = {}) {
   const description = input.description ?? SITE.description
   const canonical = abs(input.path ?? '/')
   const image = abs(input.image ?? SITE.defaultImage)
+  const imageAlt = input.imageAlt ?? (input.title ? `${input.title} cover` : SITE.name)
   const type = input.type ?? 'website'
   const robots = input.robots ?? 'index, follow'
 
@@ -63,16 +69,30 @@ export function useSeo(input: SeoInput = {}) {
       { property: 'og:description', content: description },
       { property: 'og:url', content: canonical },
       { property: 'og:image', content: image },
+      { property: 'og:image:alt', content: imageAlt },
+      { property: 'og:image:width', content: '1200' },
+      { property: 'og:image:height', content: '630' },
       { property: 'og:locale', content: SITE.locale },
       ...(input.publishedTime
         ? [{ property: 'article:published_time', content: input.publishedTime }]
         : []),
+      ...(input.modifiedTime
+        ? [{ property: 'article:modified_time', content: input.modifiedTime }]
+        : []),
+      ...(input.section
+        ? [{ property: 'article:section', content: input.section }]
+        : []),
+      ...(input.tags ?? []).map((tag) => ({
+        property: 'article:tag',
+        content: tag,
+      })),
       // Twitter
       { name: 'twitter:card', content: SITE.twitter },
       { name: 'twitter:title', content: fullTitle },
       { name: 'twitter:description', content: description },
       { name: 'twitter:url', content: canonical },
       { name: 'twitter:image', content: image },
+      { name: 'twitter:image:alt', content: imageAlt },
     ],
     script: scripts,
   })
