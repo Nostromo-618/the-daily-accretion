@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="en" data-primary="teal" data-neutral="stone" data-radius="0.25" data-font="source-sans">
+<html lang="en" data-primary="sky" data-neutral="stone" data-radius="0.5" data-font="lato">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="theme-color" content="#0d9488" />
+    <meta name="theme-color" content="#0284c7" />
     <!--
       Pre-hydration theme bootstrap: seed the brand defaults on first visit, then
       immediately mirror the persisted preference onto <html> so there is no
@@ -45,12 +45,40 @@
 
         // Pre-hydration theme bootstrap using isolated site keys ('tda-*')
         var DEFAULTS = {
-          'tda-primary-color': 'teal',
+          'tda-primary-color': 'sky',
           'tda-neutral-color': 'stone',
-          'tda-radius': '0.25',
-          'tda-font-preference': 'source-sans',
+          'tda-radius': '0.5',
+          'tda-font-preference': 'lato',
         };
         var el = document.documentElement;
+
+        // Strict binary theme: light and dark only.
+        // 'system' is purely for auto-detection that sets data-theme to the resolved OS mode.
+        var getSystemTheme = function () {
+          return window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches
+            ? 'dark'
+            : 'light';
+        };
+
+        var resolveActiveTheme = function () {
+          var pref = localStorage.getItem('tda-theme-preference');
+          if (pref === 'light' || pref === 'dark') return pref;
+          return getSystemTheme();
+        };
+
+        // Guard against vd3 removing data-theme on system mode:
+        // Instead of removing the attribute, synchronously set it to the active resolved theme.
+        var origRemove = el.removeAttribute.bind(el);
+        el.removeAttribute = function (attr) {
+          if (attr === 'data-theme') {
+            var pref = localStorage.getItem('tda-theme-preference');
+            var target = (pref === 'light' || pref === 'dark') ? pref : getSystemTheme();
+            this.setAttribute('data-theme', target);
+            return;
+          }
+          return origRemove(attr);
+        };
+
         try {
           for (var k in DEFAULTS) {
             if (localStorage.getItem(k) === null) localStorage.setItem(k, DEFAULTS[k]);
@@ -61,16 +89,30 @@
             'tda-radius': 'data-radius',
             'tda-font-preference': 'data-font',
             'tda-palette': 'data-palette',
+            'tda-site-dock': 'data-tda-dock',
           };
           for (var key in map) {
             var v = localStorage.getItem(key);
             if (v && v !== 'system') el.setAttribute(map[key], v);
           }
-          var theme = localStorage.getItem('tda-theme-preference');
-          if (theme === 'light' || theme === 'dark') {
-            el.setAttribute('data-theme', theme);
-          } else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
-            el.setAttribute('data-theme', 'dark');
+          if (!el.getAttribute('data-tda-dock')) {
+            el.setAttribute('data-tda-dock', 'top');
+          }
+          el.setAttribute('data-theme', resolveActiveTheme());
+
+          if (window.matchMedia) {
+            var mql = window.matchMedia('(prefers-color-scheme: dark)');
+            var handleSchemeChange = function (e) {
+              var pref = localStorage.getItem('tda-theme-preference');
+              if (pref !== 'light' && pref !== 'dark') {
+                el.setAttribute('data-theme', e.matches ? 'dark' : 'light');
+              }
+            };
+            if (mql.addEventListener) {
+              mql.addEventListener('change', handleSchemeChange);
+            } else if (mql.addListener) {
+              mql.addListener(handleSchemeChange);
+            }
           }
         } catch (e) {}
       })();

@@ -27,6 +27,79 @@ export interface Article {
 
 export const articles: Article[] = [
   {
+    slug: 'the-sound-of-chaos',
+    title: 'The Wild Pendulum — Chaos You Can Hear',
+    section: 'blog',
+    date: '2026-09-04',
+    dateLabel: 'September 4, 2026',
+    readTime: '12 min read',
+    excerpt:
+      'Galileo timed it with his pulse. Huygens built a clock around it. Foucault used it to prove the Earth turns. Then someone hung a second pendulum from the first one — and physics was never the same.',
+    description:
+      'The pendulum, from Galileo and Huygens to Foucault, the double pendulum, Poincaré and the three-body problem — and a live, sound-making pendulum playground where you can hear chaos for yourself.',
+    image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/5/51/Foucault_pendulum_pantheon_paris_2006.jpg/1280px-Foucault_pendulum_pantheon_paris_2006.jpg',
+    heroImage: 'https://upload.wikimedia.org/wikipedia/commons/thumb/5/51/Foucault_pendulum_pantheon_paris_2006.jpg/1280px-Foucault_pendulum_pantheon_paris_2006.jpg',
+    imageAlt: "Foucault's pendulum swinging in the Panthéon in Paris",
+    bodyHtml: `
+      <p>There is no humbler machine in all of physics. A string. A weight. A pivot. Give it a nudge and it swings, back and forth, back and forth, with a rhythm so regular that for three hundred years humanity trusted it with the most precious thing we measure: time itself. The pendulum is the reason a minute is sixty seconds and not a feeling. It is the first instrument to prove that our planet turns beneath our feet. And then, one day, someone hung a second pendulum from the end of the first one — and this quietest of machines turned into one of the loudest announcements in science: <em>predictability is not the same thing as determinism</em>.</p>
+      <p>This is the story of the pendulum — its centuries of faithful service, its one scandalous betrayal, and the strange fact that you can <strong>hear</strong> chaos. At the bottom of this page there is a live pendulum you can grab, throw, and listen to. It has no drum machine and no golden-ratio presets. Just physics, turned into sound. But first, a little history.</p>
+      <hr>
+      <h2>The first swing: Galileo counts a chandelier</h2>
+      <p>According to legend, a nineteen-year-old Galileo Galilei was sitting in Pisa Cathedral around 1583, only half listening to the service, when a swinging altar lamp caught his eye. Timing it with the only instrument he had — his own pulse — he noticed something strange: whether the lamp swung in a wide arc or a small one, each swing seemed to take the same amount of time. The story is probably embellished, but the physics is real. A pendulum is <strong>isochronous</strong>: for small swings, its period depends only on its length, not on how hard you push it.</p>
+      <p>Galileo understood immediately what that meant for medicine and music and, most of all, for clocks. He designed a pendulum-regulated clock near the end of his life, though he was too blind to build it. His son Vincenzo tried. It was left to another man to get it right.</p>
+      <p>That man was Christiaan Huygens, and in 1656 he hung a pendulum on a clock and changed civilization. For the first time, timekeeping stopped being an approximation. Clocks became accurate to <em>seconds per day</em> instead of minutes per hour. Huygens didn't stop there: he proved that a pendulum is only perfectly isochronous if the bob follows a <strong>cycloid</strong> — the curve traced by a point on a rolling wheel — and he machined curved metal "cheeks" to make it do exactly that. His 1673 <em>Horologium Oscillatorium</em> is one of the great books of physics, a marriage of pure geometry and brass engineering.</p>
+      <p>Huygens also stumbled onto something he couldn't explain. In 1665, ill in bed, he watched two of his pendulum clocks mounted on the same beam. Within half an hour, their swings had locked into a curious pattern: the pendulums were swinging <strong>exactly opposite</strong> each other, and they never broke step. He had discovered synchronization — the first observation of two oscillators coupling through a shared support. He called it "an odd kind of sympathy." It would take 350 years and the mathematics of nonlinear dynamics to fully appreciate what he was looking at. Chaos and order, in the same wooden frame.</p>
+      <figure>
+        <img src="https://upload.wikimedia.org/wikipedia/commons/a/a1/Foucault_pendulum_animated.gif" alt="Animation of Foucault's pendulum precessing over a full day" loading="lazy" onerror="this.style.display='none'">
+        <figcaption>Foucault's pendulum: the plane of swing rotates as the Earth turns beneath it. Animation: Wikimedia Commons, <a href="https://commons.wikimedia.org/wiki/File:Foucault_pendulum_animated.gif" target="_blank" rel="noopener noreferrer">CC BY-SA</a>.</figcaption>
+      </figure>
+      <h2>The pendulum that moved the Earth</h2>
+      <p>In 1851, Léon Foucault hung a 28-kilogram brass bob from a 67-metre wire under the dome of the Panthéon in Paris, set it swinging, and announced that the swing itself would prove the Earth rotates. No telescope, no stars — just a weight on a string. As the day progressed, the plane of the swing slowly turned: about 11 degrees per hour in Paris. The pendulum wasn't turning, of course; the floor — the whole city — was rotating underneath it. The crowd that gathered to watch was watching the planet move. Foucault pendulums now hang in museums and university halls around the world, the most direct proof of a fact everyone believes and almost no one has felt.</p>
+      <p>The pendulum kept its day job too. By the 1920s, the Shortt-Synchronome clocks — pendulums locked in an underground vault, so precise they had to be shielded from temperature and air pressure — were accurate to about a second per year. They were so good that they embarrassed the Earth itself: astronomers discovered that the planet's rotation, the clock of clocks, wobbles by fractions of a second. The pendulum didn't just keep time. It found the flaws in the sky.</p>
+      <hr>
+      <h2>One more arm, and goodbye certainty</h2>
+      <p>So far, so tame. A single pendulum is one of the most predictable systems ever invented. The trouble begins when you hang a second pendulum from the first one. Now the equations are still simple — two coupled differential equations, easily derived from the laws of motion — and they are completely <strong>deterministic</strong>. No randomness, no noise, no dice. Give me the positions and velocities of both arms and I can, in principle, calculate the entire future forever.</p>
+      <p>Except you can't. Not really. Because the double pendulum is exquisitely sensitive to its starting point. Move the outer bob by a hair's width — a difference so small no ruler could see it — and within seconds the two pendulums follow entirely different lives. One does a stately flip and settles into a loop; the other goes berserk, whips itself around, and collapses into something that looks like a seizure. This is <strong>chaos</strong>: a deterministic system whose future is practically unknowable. The equations have no secrets. The universe, it seems, does.</p>
+      <p>The playground below is exactly this system — with a twist. You can add more than two arms. Three, four, up to eight spheres chained head to tail, each one swinging from the last. Every arm you add multiplies the wildness. It is no longer a double pendulum but a whole family tree of chaos, and you can grab any bob and throw it.</p>
+      <hr>
+      <h2>Three bodies, one blunder, and the birth of chaos theory</h2>
+      <p>The double pendulum's misbehavior is not a quirk of toys. It is the same phenomenon that nearly broke mathematics in the 1880s.</p>
+      <p>In 1887, to celebrate his sixtieth birthday, King Oscar II of Sweden offered a prize for solving the <strong>three-body problem</strong>: given three masses pulling on each other by gravity — say the Sun, the Earth, and the Moon — find the formulas that describe their motion for all time. The two-body problem had been solved by Newton himself: neat, elegant, a triumph. Add one more body and the mathematics falls apart. Nobody could solve it.</p>
+      <p>A young French mathematician named Henri Poincaré didn't quite solve it either. But his 270-page entry was so brilliant, so full of new ideas, that the judges awarded him the prize anyway. Then the story took its famous turn. As the paper was being prepared for publication, Poincaré discovered — in a correction he paid for out of his own pocket, more than the prize was worth — that he had made a serious error. The error itself was the discovery. In trying to patch it, Poincaré found that the orbits of three gravitating bodies can tangle into a structure of infinite, infinitely-fine lacework — regions so unstable that no formula can capture them. He had discovered chaos before anyone had the word for it.</p>
+      <blockquote><p>"It may happen that small differences in the initial conditions produce very great ones in the final phenomena. A small error in the former will produce an enormous error in the latter. Prediction becomes impossible, and we have the fortuitous phenomenon."</p><p>— Henri Poincaré, <em>Science and Method</em> (1908)</p></blockquote>
+      <p>It took the rest of the century to take him seriously. In 1963, Edward Lorenz — studying weather with an early computer — found that rounding a number from 0.506127 to 0.506 changed his simulated forecast into something unrecognizable. He called the idea that a butterfly's wings in Brazil could set off a tornado in Texas the <strong>butterfly effect</strong>, and the mathematics he built for it became chaos theory. Today we know the solar system itself is chaotic over hundreds of millions of years; Saturn's rings, the asteroid belt, weather, stock markets, heartbeats — all are pendulums in disguise, deterministic and unpredictable at once.</p>
+      <hr>
+      <h2>Listening to the pendulum</h2>
+      <p>Which brings us to the strangest part of this whole story: chaos is easier to <em>hear</em> than to see.</p>
+      <p>Human vision is surprisingly bad at noticing when a motion is aperiodic. A tangle of trails on a screen just looks like a tangle. But our ears are pattern-detection machines of terrifying sensitivity. A rhythm that is almost periodic but not quite — the way a double pendulum is almost periodic but not quite — grates on the ear in a way no eye can match. Composers have known this for centuries. It's why the best pendulum is also a musical instrument.</p>
+      <p>So here is the playground. It is a real physics simulation — no tricks, no randomness — and a real synthesizer, wired together so that the pendulum plays itself:</p>
+      <ul>
+        <li>The <strong>angle of the outer bob</strong> sets the pitch of an oscillator. As the arm wheels around, the tone glides up and down the scale — you can hear it flip.</li>
+        <li>The <strong>system's total energy</strong> opens and closes a filter. A calm pendulum sounds muffled and dark; an enraged one sounds bright and sharp.</li>
+        <li>The <strong>distance between the bobs</strong> drives a tremolo. When the arms fold together, the sound shivers; when they stretch apart, it steadies.</li>
+        <li>The <strong>speed of the swing</strong> controls the loudness. A pendulum at the top of its arc whispers; a pendulum tearing through the bottom shouts.</li>
+      </ul>
+      <p>Press Play below (browsers only allow sound after you click something — a rule even physics must obey). Then try this: start it swinging, close your eyes, and just listen for thirty seconds. Then open them. The picture you'll see will feel inevitable — the sound predicted it.</p>
+      <!-- pendulum-playground -->
+      <p class="playground-caption"><strong>How to play:</strong> press Play to start the simulation and the sound. Drag any glowing sphere and release to throw it — the sound follows the motion. Toggle <em>Follow pendulum</em> in the Sound panel to hear the motion drive the synth, or turn it off to play the tone yourself. Crank <em>Spheres</em> up to 8, drop the gravity, add some delay. Break it, mute it, rebuild it.</p>
+      <hr>
+      <h2>The lesson of the wild pendulum</h2>
+      <p>The pendulum was our first honest clock — a machine that kept its promise for three centuries. And then the double pendulum taught us something the clock never could: that a universe can be perfectly lawful and still refuse to be predictable. That knowing the rules is not the same as knowing the future. Poincaré found it in the three-body problem. Lorenz found it in the weather. And you can find it in five minutes, with a weight on a string, listening to a synthesizer wheeze as the future slips out of reach.</p>
+      <p>That's the wild pendulum's lesson, and it's a surprisingly comforting one. The world doesn't have to be random to be surprising. It just has to be a little bit like a pendulum with one extra arm.</p>
+      <hr>
+      <h2>Sources</h2>
+      <ol>
+        <li><a href="https://en.wikipedia.org/wiki/Pendulum" target="_blank" rel="noopener noreferrer">Wikipedia — Pendulum</a></li>
+        <li><a href="https://en.wikipedia.org/wiki/Christiaan_Huygens" target="_blank" rel="noopener noreferrer">Wikipedia — Christiaan Huygens</a> (1656 clock; <em>Horologium Oscillatorium</em>, 1673; 1665 sympathetic clocks)</li>
+        <li><a href="https://en.wikipedia.org/wiki/Foucault_pendulum" target="_blank" rel="noopener noreferrer">Wikipedia — Foucault pendulum</a></li>
+        <li><a href="https://en.wikipedia.org/wiki/Double_pendulum" target="_blank" rel="noopener noreferrer">Wikipedia — Double pendulum</a></li>
+        <li><a href="https://en.wikipedia.org/wiki/Three-body_problem" target="_blank" rel="noopener noreferrer">Wikipedia — Three-body problem</a> (Oscar II prize, Poincaré's memoir and its discovered error)</li>
+        <li>Poincaré, Henri. <em>Science and Method</em>. 1908.</li>
+        <li>Lorenz, Edward N. "Deterministic Nonperiodic Flow." <em>Journal of the Atmospheric Sciences</em>, 1963.</li>
+      </ol>
+    `,
+  },
+  {
     slug: 'scent-of-a-tango',
     title: 'Scent of a Tango',
     section: 'random',

@@ -5,6 +5,7 @@ import { getArticle } from '@/data/articles'
 import { SITE } from '@/data/site'
 import { abs, useSeo } from '@/composables/useSeo'
 import { withBase } from '@/utils/withBase'
+import PendulumPlayground from '@/components/PendulumPlayground.vue'
 
 const route = useRoute()
 const slug = computed(() => String(route.params.slug))
@@ -13,6 +14,14 @@ const article = computed(() => getArticle(slug.value))
 const backTo = computed(() => (article.value?.section === 'blog' ? '/blog' : '/random'))
 const backLabel = computed(() => (article.value?.section === 'blog' ? 'Back to Blog' : 'Back to Random'))
 const hasLeadingHeading = computed(() => article.value?.bodyHtml.trim().startsWith('<h2') ?? false)
+
+// Articles may embed the interactive pendulum playground via this marker.
+const PENDULUM_MARKER = '<!-- pendulum-playground -->'
+const playgroundParts = computed(() => {
+  const body = article.value?.bodyHtml
+  if (!body || !body.includes(PENDULUM_MARKER)) return []
+  return body.split(PENDULUM_MARKER)
+})
 
 // SEO — SSG renders known slugs; client nav to unknown slugs gets noindex.
 if (article.value) {
@@ -123,10 +132,22 @@ const onHeroError = (e: Event) => {
         />
 
         <div
+          v-if="playgroundParts.length === 0"
           class="article-content"
           :class="{ 'article-content--no-dropcap': hasLeadingHeading }"
           v-html="article.bodyHtml"
         />
+
+        <div
+          v-else
+          class="article-content article-content--split"
+          :class="{ 'article-content--no-dropcap': hasLeadingHeading }"
+        >
+          <template v-for="(part, index) in playgroundParts" :key="index">
+            <div class="article-part" v-html="part"></div>
+            <PendulumPlayground v-if="index < playgroundParts.length - 1" />
+          </template>
+        </div>
 
         <div class="article-nav">
           <RouterLink :to="backTo" class="vd-btn vd-btn-ghost-primary">

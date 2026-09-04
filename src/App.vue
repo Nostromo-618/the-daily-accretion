@@ -2,12 +2,16 @@
 import { useHead } from '@unhead/vue'
 import SiteNav from '@/components/SiteNav.vue'
 import SiteFooter from '@/components/SiteFooter.vue'
+import { useSwipeNav } from '@/composables/useSwipeNav'
 import { SITE } from '@/data/site'
+
+// Enable mobile touch swipe left/right navigation between tabs
+useSwipeNav()
 
 // Baseline head applied on every route (pages layer their own SEO on top).
 useHead({
   htmlAttrs: { lang: 'en' },
-  meta: [{ name: 'theme-color', content: '#0d9488' }],
+  meta: [{ name: 'theme-color', content: '#0284c7' }],
   link: [
     { rel: 'icon', type: 'image/svg+xml', href: `${import.meta.env.BASE_URL}favicon.svg` },
     {

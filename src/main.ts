@@ -18,16 +18,16 @@ export const createApp = ViteSSG(
     },
   },
   ({ app }) => {
-    // Lock in the site's brand theme defaults (teal / stone / 0.25 radius /
-    // Source Sans). User selections in the theme customizer still persist and
+    // Lock in the site's brand theme defaults (sky / stone / 0.5 radius /
+    // Lato). User selections in the theme customizer still persist and
     // win on the client — these are only the first-visit baseline.
     app.use(VanduoVue, {
       themeDefaults: {
-        PRIMARY_LIGHT: 'teal',
-        PRIMARY_DARK: 'teal',
+        PRIMARY_LIGHT: 'sky',
+        PRIMARY_DARK: 'sky',
         NEUTRAL: 'stone',
-        RADIUS: '0.25',
-        FONT: 'jetbrains-mono',
+        RADIUS: '0.5',
+        FONT: 'lato',
       },
     })
     app.directive('reveal', reveal)

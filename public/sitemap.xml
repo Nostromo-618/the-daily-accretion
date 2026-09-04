@@ -25,6 +25,12 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://nostromo-618.github.io/the-daily-accretion/blog/the-sound-of-chaos</loc>
+    <lastmod>2026-09-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://nostromo-618.github.io/the-daily-accretion/blog/scent-of-a-tango</loc>
     <lastmod>2026-02-01</lastmod>
     <changefreq>monthly</changefreq>

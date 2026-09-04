@@ -57,7 +57,7 @@ pnpm preview    # preview the production build
 
 ## Theming
 
-Brand defaults (teal / stone / `0.25` radius / Source Sans) are set once in
+Brand defaults (sky / stone / `0.5` radius / Lato) are set once in
 [`src/main.ts`](src/main.ts) via `VanduoVue({ themeDefaults })`, and mirrored
 pre-hydration in [`index.html`](index.html) to avoid a flash. Visitors can still
 change palette, dark/light mode, radius and font via the in-nav theme switcher;
