@@ -35,4 +35,7 @@ logs
 # Agent & Testing Artifacts
 .kilo/
 .playwright-mcp/
+.cursor/
+.vscode/mcp.json
+
 
